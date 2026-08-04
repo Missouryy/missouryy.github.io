@@ -3,202 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yu Yan — Academic Homepage</title>
-  <meta name="description" content="Academic personal homepage of Yu Yan, AI Researcher & Undergraduate Student at Southeast University. WWDC26 Distinguished Winner, SEU PALM Lab, iFLYTEK R&D.">
+  <meta name="theme-color" content="#f4f1ea">
+  <title>Yu Yan — AI Researcher &amp; Builder</title>
+  <meta name="description" content="Yu Yan is an AI researcher and builder working on reliable language-model agents, data reasoning, and spatial computing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://missouryy.github.io/">
+  <meta property="og:title" content="Yu Yan — AI Researcher &amp; Builder">
+  <meta property="og:description" content="Building AI agents that reason over real data.">
+  <meta property="og:image" content="https://missouryy.github.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://missouryy.github.io/og.png">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Minimal Header Bar -->
-  <header class="header-bar">
-    <div class="header-container">
-      <a href="#" class="header-brand">Yu Yan</a>
-      <nav class="header-nav">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#research">Research</a>
-        <a href="#education">Education</a>
-        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-          <span class="theme-icon">🌓</span>
-        </button>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#top" aria-label="Yu Yan, back to top">YY<span>.</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#updates">Updates</a>
+        <a href="#background">Background</a>
       </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+        <span class="theme-toggle-mark" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
-  <main class="main-container">
-    
-    <!-- Profile & About Section -->
-    <section id="about" class="profile-section">
-      <div class="profile-grid">
-        <div class="profile-bio">
-          <h1 class="profile-name">Yu Yan</h1>
-          <p class="profile-title">
-            B.Eng. Candidate in Artificial Intelligence <br>
-            School of Artificial Intelligence, <a href="https://www.seu.edu.cn/" target="_blank" rel="noopener">Southeast University</a>
-          </p>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AI researcher · Nanjing, China</p>
+        <h1>I build AI agents that <em>reason</em> over real data.</h1>
+        <p class="hero-intro">
+          I’m Yu Yan, an Artificial Intelligence undergraduate at Southeast University. My work focuses on reliable language-model agents, tool-augmented data reasoning, and verifiable workflows.
+        </p>
+        <div class="hero-actions" aria-label="Contact and profile links">
+          <a class="button button-primary" href="mailto:mail2yuyan@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/Missouryy" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener">Pixel Beader <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
 
-          <p class="profile-affiliation">
-            Research Assistant at <strong>SEU PALM Lab</strong> <br>
-            Assistant Algorithm Engineer at <strong>iFLYTEK R&D Group</strong>
-          </p>
+      <div class="hero-portrait">
+        <div class="portrait-frame">
+          <img src="portrait.jpg" alt="Yu Yan standing in front of the Golden Gate Bridge" width="1200" height="1497">
+        </div>
+        <div class="award-note">
+          <span class="award-year">2026</span>
+          <span><strong>Apple Distinguished Winner</strong><br>Top 50 worldwide</span>
+        </div>
+      </div>
+    </section>
 
-          <p class="profile-text">
-            I am a senior undergraduate student in Artificial Intelligence at Southeast University, expecting to graduate in June 2027. My research interests focus on <strong>Large Language Model Agents</strong>, <strong>Tool-Augmented Data Reasoning</strong>, <strong>Verifiable Agent Workflows</strong>, <strong>Text-to-SQL</strong>, and <strong>Multi-Agent Orchestration</strong>.
-          </p>
+    <section class="now-strip" aria-label="Current roles and research focus">
+      <div class="now-label">Currently</div>
+      <div class="now-item">
+        <span class="now-index">01</span>
+        <p><strong>Research Assistant</strong><br>SEU PALM Lab</p>
+      </div>
+      <div class="now-item">
+        <span class="now-index">02</span>
+        <p><strong>Algorithm Engineer</strong><br>iFLYTEK R&amp;D</p>
+      </div>
+      <div class="now-item">
+        <span class="now-index">03</span>
+        <p><strong>Exploring</strong><br>Agents · Data · Reliability</p>
+      </div>
+    </section>
 
-          <p class="profile-text">
-            I was recognized as an Apple <strong>WWDC26 Swift Student Challenge Distinguished Winner</strong> (Top 50 Worldwide) for spatial SwiftUI engineering and 3D graphics rendering.
-          </p>
+    <section class="section" id="work">
+      <div class="section-intro">
+        <p class="section-kicker">Selected work</p>
+        <h2>Systems that move from a good demo to dependable work.</h2>
+        <p>I design the architecture around the model: explicit phases, evidence gates, execution checks, and interfaces that make complex systems understandable.</p>
+      </div>
 
-          <div class="contact-links">
-            <a href="mailto:mail2yuyan@gmail.com" class="link-btn">
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>Email</span>
-            </a>
-
-            <a href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener" class="link-btn">
-              <img src="pixel-beader-icon.png" alt="Pixel Beader Icon" class="app-icon-img">
-              <span>Pixel Beader Site</span>
-            </a>
-
-            <a href="https://apps.apple.com/us/app/pixel-beader/id6780332489" target="_blank" rel="noopener" class="appstore-black-badge">
-              <svg class="apple-logo-svg" viewBox="0 0 170 170" width="14" height="14" fill="currentColor">
-                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.34.13-9.16-1.9-14.46-6.1-3.69-3.04-7.69-7.85-12.01-14.42-6.23-9.42-11.18-19.82-14.86-31.2-3.68-11.38-5.52-22.18-5.52-32.39 0-14.62 3.65-26.46 10.95-35.53 7.3-9.07 16.51-13.68 27.63-13.82 4.67 0 9.87 1.15 15.6 3.44 5.73 2.29 9.53 3.44 11.4 3.44 1.52 0 5.43-1.19 11.73-3.56 6.3-2.38 11.51-3.5 15.63-3.37 12.06.51 21.68 5.09 28.86 13.75-10.74 6.51-16.01 15.64-15.82 27.39.2 9.17 3.79 16.8 10.78 22.89 7 6.09 15.22 9.47 24.66 10.14-2.61 7.78-6.12 15.54-10.53 23.29zM119.22 31.94c0-7.07 2.58-13.79 7.74-20.17 5.16-6.38 11.66-10.3 19.5-11.77.65 8.16-1.74 15.4-7.18 21.72-5.44 6.32-12.07 10.02-19.89 11.1-0.06-0.3-0.17-0.6-0.17-0.88z"/>
-              </svg>
-              <div class="appstore-text">
-                <span class="subtext">Download on the</span>
-                <span class="maintext">App Store</span>
-              </div>
-            </a>
+      <div class="work-list">
+        <article class="work-card work-card-featured">
+          <div class="work-number">01</div>
+          <div class="work-content">
+            <div class="work-meta">
+              <span>SEU PALM Lab</span>
+              <span>Mar — Jun 2026</span>
+            </div>
+            <h3>Cairn</h3>
+            <p class="work-lede">A phase-structured SQL agent for complex, heterogeneous data reasoning.</p>
+            <p class="work-detail">Replaced open-ended agent loops with a forward-only four-phase workflow, enforced tool boundaries, and added evidence and answer guards for more reliable results.</p>
+            <div class="work-footer">
+              <div class="metric"><strong>0.52 → 0.67</strong><span>benchmark score</span></div>
+              <div class="tags"><span>Text-to-SQL</span><span>DuckDB</span><span>Agent systems</span></div>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="profile-photo-wrapper">
-          <img src="homepagephoto.jpg" alt="Yu Yan Photo" class="profile-photo">
-        </div>
+        <article class="work-card">
+          <div class="work-number">02</div>
+          <div class="work-content">
+            <div class="work-meta">
+              <span>iFLYTEK R&amp;D</span>
+              <span>Jul 2026 — Present</span>
+            </div>
+            <h3>Magnus Weaver</h3>
+            <p class="work-lede">An enterprise multi-agent platform that turns business questions into validated data work.</p>
+            <p class="work-detail">Co-developed the pipeline from requirement intake and planning through metadata-aware SQL generation, safe execution, and review.</p>
+            <div class="work-footer">
+              <div class="metric"><strong>60%+</strong><span>autonomous closure</span></div>
+              <div class="tags"><span>Multi-agent</span><span>Data platform</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-number">03</div>
+          <div class="work-content">
+            <div class="work-meta">
+              <span>Apple Swift Student Challenge</span>
+              <span>Feb 2026</span>
+            </div>
+            <h3>Pixel Beader</h3>
+            <p class="work-lede">An on-device spatial bead-art editor with precise touch tools and real-time 3D rendering.</p>
+            <p class="work-detail">Built in SwiftUI and SceneKit with Apple Pencil interaction, compact grid storage, transactional undo, color quantization, and procedural materials.</p>
+            <div class="work-footer">
+              <div class="metric"><strong>Top 50</strong><span>worldwide</span></div>
+              <div class="project-actions">
+                <a href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener">Visit project ↗</a>
+                <a href="https://apps.apple.com/us/app/pixel-beader/id6780332489" target="_blank" rel="noopener">App Store ↗</a>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- News Section -->
-    <section id="news" class="section-block">
-      <h2 class="section-heading">News</h2>
-      <ul class="news-list">
+    <section class="section split-section" id="updates">
+      <div class="section-intro compact">
+        <p class="section-kicker">Updates</p>
+        <h2>What I’ve been working on lately.</h2>
+      </div>
+      <ol class="timeline">
         <li>
-          <span class="news-date">Jul 2026</span>
-          <span class="news-content">Joined <strong>iFLYTEK R&D Group</strong> as Assistant Research Algorithm Engineer working on enterprise multi-agent platform.</span>
+          <time datetime="2026-07">Jul 2026</time>
+          <div><strong>Joined iFLYTEK R&amp;D</strong><p>Working on an enterprise multi-agent data platform.</p></div>
         </li>
         <li>
-          <span class="news-date">Mar 2026</span>
-          <span class="news-content">Joined <strong>SEU PALM Lab</strong> as Research Assistant, designing the <strong>Cairn</strong> phase-structured SQL agent architecture.</span>
+          <time datetime="2026-03">Mar 2026</time>
+          <div><strong>Joined SEU PALM Lab</strong><p>Researching phase-structured agents for data reasoning.</p></div>
         </li>
         <li>
-          <span class="news-date">Feb 2026</span>
-          <span class="news-content">Recognized as an Apple <strong>WWDC26 Swift Student Challenge Distinguished Winner</strong> (Top 50 Worldwide).</span>
+          <time datetime="2026-02">Feb 2026</time>
+          <div><strong>Named a Distinguished Winner</strong><p>Apple Swift Student Challenge, top 50 worldwide.</p></div>
         </li>
-      </ul>
+      </ol>
     </section>
 
-    <!-- Research & Experience Section -->
-    <section id="research" class="section-block">
-      <h2 class="section-heading">Research & Experience</h2>
-
-      <div class="project-entry">
-        <div class="project-header">
-          <h3 class="project-title">Cairn: Phase-Structured Agent for Complex Data Reasoning</h3>
-          <span class="project-meta-right">SEU PALM Lab &bull; Mar 2026 – Jun 2026</span>
+    <section class="section background-grid" id="background">
+      <div class="education-card">
+        <p class="section-kicker">Education</p>
+        <div class="education-head">
+          <div>
+            <h2>Southeast University</h2>
+            <p>B.Eng. Candidate · Artificial Intelligence</p>
+          </div>
+          <span>Expected 2027</span>
         </div>
-        <p class="project-role">Research Assistant &bull; Advised at Southeast University</p>
-        <p class="project-desc">
-          Designed a SQL-first data agent using <strong>Qwen-3.5-35B-A3B</strong> on a forward-only 4-phase finite-state workflow (<code>SPEC</code> &rarr; <code>EXPLORE</code> &rarr; <code>DRAFT</code> &rarr; <code>REVIEW</code>) rather than open ReAct loops. Enforced phase tool allowlists, evidence quota gating, and a unified DuckDB catalog under a 150k token budget. Implemented fail-closed answer guards and subset-aware numeric convergence voting, raising accuracy score from <strong>0.52 to 0.67</strong> on 380+ benchmark tasks.
-        </p>
-        <div class="project-links">
-          <span class="badge-result">Benchmark Score: 0.52 &rarr; 0.67</span>
-          <span class="tag-subtle">Text-to-SQL</span>
-          <span class="tag-subtle">DuckDB</span>
-          <span class="tag-subtle">State Machine Agent</span>
+        <div class="education-stats">
+          <div><strong>3.61</strong><span>GPA / 4.0</span></div>
+          <div><strong>87.63</strong><span>Average / 100</span></div>
+          <div><strong>565</strong><span>CET-6</span></div>
         </div>
       </div>
 
-      <div class="project-entry">
-        <div class="project-header">
-          <h3 class="project-title">Magnus Weaver: Agentic Enterprise Data Requirement Platform</h3>
-          <span class="project-meta-right">iFLYTEK Co., Ltd. &bull; Jul 2026 – Present</span>
-        </div>
-        <p class="project-role">Assistant Research Algorithm Engineer &bull; iFLYTEK R&D Group</p>
-        <p class="project-desc">
-          Co-developed an end-to-end multi-agent data-request pipeline spanning rewriting, intake, planning, metadata-aware technical agents, validation, execution, and review. Built over a self-enriching data vault mining historical JOIN keys and JSON paths, serving 78 tables and 1000+ TB across 400+ enterprise requests at a 60%+ autonomous closure rate.
-        </p>
-        <div class="project-links">
-          <span class="badge-result">1000+ TB Vault &bull; 60%+ Closure Rate</span>
-          <span class="tag-subtle">Multi-Agent Systems</span>
-          <span class="tag-subtle">Enterprise Data Vault</span>
-        </div>
-      </div>
-
-      <div class="project-entry">
-        <div class="project-header">
-          <h3 class="project-title">Pixel Beader: On-Device Spatial Bead Art Editor & 3D Renderer</h3>
-          <span class="project-meta-right">Apple WWDC26 &bull; Feb 2026</span>
-        </div>
-        <p class="project-role">Distinguished Winner (Top 50 Worldwide)</p>
-        <p class="project-desc">
-          Architected an on-device SwiftUI editor spanning image import, canvas editing, ironing simulation, and SceneKit 3D preview. Implemented precision Apple Pencil stroke separation, spatial color quantization, packed bit grid storage with transaction undo graphs, and reusable 3D procedural materials.
-        </p>
-        <div class="project-links">
-          <a href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener" class="link-action">
-            <img src="pixel-beader-icon.png" alt="App Icon" class="inline-icon">
-            <span>Website</span>
-          </a>
-          <a href="https://apps.apple.com/us/app/pixel-beader/id6780332489" target="_blank" rel="noopener" class="link-action">
-            <span>App Store</span>
-          </a>
-          <span class="tag-subtle">SwiftUI</span>
-          <span class="tag-subtle">SceneKit</span>
-        </div>
-      </div>
-
+      <aside class="focus-card">
+        <p class="section-kicker">Research focus</p>
+        <ul>
+          <li>Language-model agents</li>
+          <li>Tool-augmented reasoning</li>
+          <li>Verifiable workflows</li>
+          <li>Text-to-SQL</li>
+        </ul>
+      </aside>
     </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section-block">
-      <h2 class="section-heading">Education</h2>
-      
-      <div class="edu-entry">
-        <div class="edu-header">
-          <h3 class="edu-school">Southeast University</h3>
-          <span class="edu-date">Nanjing, China &bull; Expected Jun 2027</span>
-        </div>
-        <p class="edu-degree">B.Eng. Candidate in Artificial Intelligence, School of Artificial Intelligence</p>
-        <p class="edu-metrics">
-          GPA: <strong>3.61 / 4.0</strong> &bull; Average Score: <strong>87.63 / 100</strong> &bull; CET-6: <strong>565</strong>
-        </p>
-        <p class="edu-courses">
-          <strong>Selected Coursework:</strong> Special Topics in NLP (100), Deep Learning (96), Big Data Processing (91), Probability & Stochastic Processes (90), Natural Language Processing (88), Data Structures (87), Multi-Agent Systems (86), Machine Learning (84).
-        </p>
-      </div>
-    </section>
-
-    <!-- Honors Section -->
-    <section id="honors" class="section-block">
-      <h2 class="section-heading">Honors & Awards</h2>
-      <ul class="simple-awards-list">
-        <li>
-          <strong>WWDC26 Swift Student Challenge Distinguished Winner</strong> &mdash; Apple Inc., Top 50 Worldwide (Feb 2026)
-        </li>
-      </ul>
-    </section>
-
   </main>
 
   <footer class="site-footer">
-    <div class="footer-container">
-      <p>&copy; 2026 Yu Yan. Academic Personal Homepage.</p>
+    <div>
+      <p class="footer-callout">Have an interesting problem?</p>
+      <a href="mailto:mail2yuyan@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="footer-meta">
+      <p>Yu Yan · 严禹</p>
+      <p>© <span id="year">2026</span></p>
     </div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>

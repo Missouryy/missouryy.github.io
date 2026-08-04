@@ -1,20 +1,24 @@
-/**
- * Yu Yan Academic Homepage JS Engine
- * Minimal theme switcher & navigation handlers
- */
+const root = document.documentElement;
+const toggle = document.querySelector('#theme-toggle');
+const themeColor = document.querySelector('meta[name="theme-color"]');
+const storedTheme = localStorage.getItem('yu-yan-theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const html = document.documentElement;
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  root.dataset.theme = theme;
+  toggle?.setAttribute('aria-pressed', String(isDark));
+  toggle?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
+  themeColor?.setAttribute('content', isDark ? '#181a18' : '#f4f1ea');
+}
 
-  // Retrieve theme preference or default to light for clean academic readability
-  const savedTheme = localStorage.getItem('academic-theme') || 'light';
-  html.setAttribute('data-theme', savedTheme);
+applyTheme(storedTheme || (systemPrefersDark ? 'dark' : 'light'));
 
-  themeToggleBtn?.addEventListener('click', () => {
-    const currentTheme = html.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('academic-theme', newTheme);
-  });
+toggle?.addEventListener('click', () => {
+  const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(nextTheme);
+  localStorage.setItem('yu-yan-theme', nextTheme);
 });
+
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();
