@@ -317,27 +317,25 @@ main,
   filter: saturate(0.82) contrast(1.03);
 }
 
-.award-note {
+.portrait-nameplate {
   position: relative;
   width: calc(100% - 34px);
   margin: -36px 0 0 -34px;
-  padding: 19px 22px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 18px;
+  padding: 18px 24px;
+  display: flex;
+  gap: 12px;
   align-items: center;
   color: var(--accent-ink);
   background: var(--accent-soft);
   box-shadow: 0 15px 34px rgba(50, 29, 21, 0.1);
-  font-size: 12px;
-  line-height: 1.5;
+  font: 500 20px/1.2 var(--serif);
+  letter-spacing: -0.015em;
 }
 
-.award-year {
-  padding-right: 18px;
-  border-right: 1px solid color-mix(in srgb, var(--accent-ink) 30%, transparent);
-  font: 500 11px/1 var(--mono);
-  letter-spacing: 0.05em;
+.name-divider {
+  color: color-mix(in srgb, var(--accent-ink) 36%, transparent);
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .now-strip {
@@ -684,7 +682,7 @@ main,
     font-size: clamp(52px, 8vw, 72px);
   }
 
-  .award-note {
+  .portrait-nameplate {
     width: calc(100% + 5px);
     margin-left: -22px;
   }
