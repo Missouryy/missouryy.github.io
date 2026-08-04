@@ -1,0 +1,107 @@
+% !TEX program = xelatex
+% !TEX encoding = UTF-8
+\documentclass[10pt, a4paper]{article}
+\usepackage[left=0.75in, right=0.75in, top=0.75in, bottom=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontspec}
+
+\setmainfont{Times New Roman}[Ligatures=TeX, BoldFont=* Bold, ItalicFont=* Italic]
+
+\pagestyle{empty}
+\linespread{1.01}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\definecolor{PrimaryText}{HTML}{1D1D1F}
+\definecolor{MutedText}{HTML}{666666}
+\definecolor{AccentBlue}{HTML}{005BBB}
+\definecolor{Divider}{HTML}{D7D7D7}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=AccentBlue,
+    urlcolor=AccentBlue,
+}
+
+\setlist[itemize]{
+    leftmargin=*,
+    label={\small\color{MutedText}$\bullet$},
+    itemsep=0.6pt,
+    parsep=0pt,
+    topsep=1.8pt
+}
+
+\titleformat{\section}
+  {\large\bfseries\color{PrimaryText}}
+  {}{0em}{}
+  [\vspace{-0.6em}\color{Divider}\rule{\textwidth}{0.45pt}]
+\titlespacing*{\section}{0pt}{0.45em}{0.08em}
+
+\newcommand{\entry}[4]{
+  \vspace{0.2em}
+  {\large\textbf{\color{PrimaryText}#1}} \hfill {\color{MutedText}#3} \\
+  \textit{\color{PrimaryText}#2} \hfill {\small\color{MutedText}#4} \par
+}
+
+\newcommand{\compactentry}[4]{
+  \vspace{0.2em}
+  \textbf{\color{PrimaryText}#1} \hfill {\color{MutedText}#3} \\
+  \textit{\color{PrimaryText}#2} \hfill {\small\color{MutedText}#4} \par
+}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+{\huge \bfseries \color{PrimaryText} Yu Yan}\\[0.9em]
+{\large \color{MutedText}
+(+86) 180 0569 8749 ~|~
+\href{mailto:mail2yuyan@gmail.com}{mail2yuyan@gmail.com} ~|~
+Hefei, Anhui, China
+}
+\end{center}
+
+\vspace{-0.2em}
+\section*{EDUCATION}
+\entry{Southeast University}{B.Eng. candidate, School of Artificial Intelligence}{Nanjing, China}{Expected Jun. 2027}
+\begin{itemize}
+    \item GPA: \textbf{3.61 / 4.0}; Average Score: \textbf{87.63 / 100}; CET-6: \textbf{565}.
+    \item {\small Relevant coursework: Deep Learning (96), Natural Language Processing (88), Multi-agent System (86), Machine Learning (84), Special Topics in NLP (100), Big Data Processing (91), Data Structures (87), Probability Statistics \& Stochastic Processes (90).}
+\end{itemize}
+
+\vspace{0.15em}
+\section*{RESEARCH INTERESTS}
+Large language model agents, tool-augmented data reasoning, verifiable agent workflows, text-to-SQL, multi-agent orchestration, and knowledge-grounded AI systems.
+
+\vspace{0.35em}
+\section*{RESEARCH EXPERIENCE}
+\entry{Cairn: Phase-Structured Agent for Complex Data Reasoning}{Research Assistant, SEU PALM Lab}{Southeast University}{Mar. 2026 -- Jun. 2026}
+\begin{itemize}
+    \item Designed and built a SQL-first data agent using Qwen-3.5-35B-A3B on a forward-only four-phase finite-state workflow (\texttt{SPEC} $\rightarrow$ \texttt{EXPLORE} $\rightarrow$ \texttt{DRAFT} $\rightarrow$ \texttt{REVIEW}) rather than open-ended ReAct for heterogeneous table and document reasoning, raising the mean benchmark score on a held-out \textbf{380+} task evaluation set from \textbf{0.52} to \textbf{0.67}.
+    \item Enforced the workflow in the runtime instead of the prompt: per-phase tool allowlists reject out-of-phase calls, an evidence quota gates entry to drafting, and the terminal query's column count is checked against the output-shape contract declared during \texttt{SPEC}.
+    \item Built the evidence-grounding layer with full-fidelity CSV/JSON/SQLite/Markdown profiling under a \textbf{150k}-token budget with priority-ordered eviction, a unified DuckDB catalog exposing every source file as a joinable view, and a computation-planning advisor separating semantic calculation intent from schema-grounded query generation.
+    \item Strengthened reliability through fail-closed answer guards spanning implicit-computation rule checks, empty-result rejection, schema-following entity checks, and LLM column auditing, plus an alternative-SQL cross-check protocol before confirmation and \textbf{3} parallel attempts merged by subset-aware numeric-convergence voting.
+\end{itemize}
+
+\vspace{0.3em}
+\section*{INTERNSHIP EXPERIENCE}
+\entry{Magnus Weaver: Agentic Enterprise Data Requirement Platform}{Assistant Research Algorithm Engineer, iFLYTEK R\&D Group}{iFLYTEK Co., Ltd.}{Jul. 2026 -- Present}
+\begin{itemize}
+    \item Co-developed an end-to-end multi-agent data-request pipeline spanning rewriting, intake, planning, metadata-aware technical agents, validation, execution, and review, over a self-enriching data vault mining historical JOIN keys and JSON paths, serving \textbf{78} tables and \textbf{1000+ TB} across \textbf{400+} requests at a \textbf{60\%+} closure rate.
+    \item Designed the intake agent that normalizes business language, including relative-time and enum code-value mapping, streams requirement understanding, scores completeness, and surfaces candidate options for missing information before handing structured context downstream.
+    \item Built the planner-to-technical-analysis handoff, where an LLM planner splits each request into dependency-linked task intents and an async stage generates cross-cluster-aware SQL from recalled and temp-table metadata, ranks Top-N candidates, and self-corrects the winner against detected uncertainties.
+    \item Hardened the executor with execution-plan validation, structured filter/output recovery with conservative fallback parsing, same-cluster temp-table materialization, auto-LIMIT injection with Cartesian-product and partition-scan guards, and per-task trace logging.
+\end{itemize}
+
+\vspace{0.3em}
+\section*{HONORS}
+\entry{WWDC26 \href{https://developer.apple.com/swift-student-challenge/}{Swift Student Challenge}}{Distinguished Winner (top 50 worldwide)}{Apple}{Feb. 2026}
+\begin{itemize}
+    \item Architected \href{https://apps.apple.com/us/app/pixel-beader/id6780332489}{Pixel Beader}, an on-device SwiftUI editor spanning image import, canvas editing, ironing simulation, and SceneKit preview, backed by packed grid storage and grouped undo transactions.
+    \item Implemented its precision interaction and rendering stack by separating Apple Pencil strokes from touch, adding line tracing and lasso fill, and optimizing color quantization, transparency, reusable 3D meshes, and procedural materials.
+\end{itemize}
+
+\end{document}

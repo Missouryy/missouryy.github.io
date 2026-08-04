@@ -1,0 +1,533 @@
+/* ==========================================================================
+   Academic Personal Homepage Stylesheet
+   Clean, Content-First, High Legibility Architecture
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, Cambria, serif;
+  --font-mono: 'JetBrains Mono', Menlo, Monaco, monospace;
+
+  /* Light Mode (Default Academic Theme) */
+  --bg-body: #ffffff;
+  --bg-header: rgba(255, 255, 255, 0.9);
+  --bg-card: #f9fafb;
+  --bg-tag: #f3f4f6;
+
+  --text-main: #111827;
+  --text-sub: #4b5563;
+  --text-muted: #6b7280;
+
+  --border-color: #e5e7eb;
+  --link-color: #0066cc;
+  --link-hover: #004499;
+
+  --max-width: 860px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+[data-theme="dark"] {
+  --bg-body: #0d1117;
+  --bg-header: rgba(13, 17, 23, 0.9);
+  --bg-card: #161b22;
+  --bg-tag: #21262d;
+
+  --text-main: #f0f6fc;
+  --text-sub: #8b949e;
+  --text-muted: #6e7681;
+
+  --border-color: #30363d;
+  --link-color: #58a6ff;
+  --link-hover: #79c0ff;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Header Bar */
+.header-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.header-name:hover {
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.header-nav a:hover {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+.theme-btn:hover {
+  background: var(--bg-tag);
+}
+
+/* Main Layout */
+.main-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px;
+  flex: 1;
+}
+
+/* Profile Section */
+.profile-section {
+  margin-bottom: 56px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 40px;
+  align-items: start;
+}
+
+.profile-name {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.cn-name {
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--text-sub);
+  margin-left: 8px;
+}
+
+.profile-title {
+  font-size: 16px;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.profile-affiliation {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin-bottom: 18px;
+  padding-left: 12px;
+  border-left: 3px solid var(--link-color);
+}
+
+.profile-text {
+  font-size: 15px;
+  color: var(--text-main);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tag);
+  border: 1px solid var(--border-color);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: all 0.15s ease;
+}
+
+.link-btn:hover {
+  background: var(--border-color);
+  text-decoration: none;
+}
+
+.app-icon-img {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.inline-app-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.flex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Official Apple Black App Store Badge Button */
+.appstore-black-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #000000;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none !important;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.appstore-black-badge:hover {
+  background: #1a1a1a;
+  transform: translateY(-1px);
+  text-decoration: none !important;
+}
+
+.apple-logo-svg {
+  fill: #ffffff;
+}
+
+.appstore-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.appstore-text .subtext {
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: #a6a6a6;
+  text-transform: uppercase;
+}
+
+.appstore-text .maintext {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+  margin-top: 1px;
+}
+
+.location-tag {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* Profile Photo */
+.profile-photo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  object-fit: cover;
+}
+
+/* Section Common */
+.section-block {
+  margin-bottom: 48px;
+}
+
+.section-heading {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text-main);
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+/* News List */
+.news-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 16px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.news-date {
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.news-content {
+  color: var(--text-main);
+}
+
+/* Research & Project Cards */
+.project-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.project-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.project-venue {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.project-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--link-color);
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.project-meta,
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.metric-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+[data-theme="dark"] .metric-tag {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.tech-tag {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tag);
+  color: var(--text-sub);
+  border: 1px solid var(--border-color);
+}
+
+.paper-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--link-color);
+}
+
+.paper-btn:hover {
+  text-decoration: underline;
+}
+
+/* Education Section */
+.edu-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.edu-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.edu-date {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.edu-sub {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-sub);
+  margin-bottom: 10px;
+}
+
+.edu-stats {
+  font-size: 14px;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.edu-courses {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+/* Honors List */
+.simple-list {
+  list-style: square;
+  padding-left: 20px;
+}
+
+.simple-list li {
+  font-size: 14.5px;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 24px 0;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-photo-wrapper {
+    order: -1;
+    justify-content: flex-start;
+  }
+  .profile-photo {
+    max-width: 160px;
+  }
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .header-nav {
+    gap: 12px;
+  }
+}
