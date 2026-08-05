@@ -344,10 +344,14 @@ main,
   background: color-mix(in srgb, var(--accent-ink) 42%, transparent);
 }
 
+.name-latin {
+  transform: translateY(2px);
+}
+
 .name-han {
   font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.04em;
 }
 
