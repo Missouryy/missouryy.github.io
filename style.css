@@ -319,23 +319,25 @@ main,
 
 .portrait-nameplate {
   position: relative;
-  width: calc(100% - 34px);
-  margin: -36px 0 0 -34px;
-  padding: 18px 24px;
+  margin: 15px 2px 0;
+  padding: 0;
   display: flex;
-  gap: 12px;
+  justify-content: flex-end;
   align-items: center;
-  color: var(--accent-ink);
-  background: var(--accent-soft);
-  box-shadow: 0 15px 34px rgba(50, 29, 21, 0.1);
-  font: 500 20px/1.2 var(--serif);
-  letter-spacing: -0.015em;
+  gap: 10px;
+  color: var(--ink-soft);
+  font: 500 16px/1.2 var(--serif);
+  letter-spacing: -0.01em;
 }
 
 .name-divider {
-  color: color-mix(in srgb, var(--accent-ink) 36%, transparent);
-  font-size: 15px;
-  font-weight: 400;
+  width: 28px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+  color: transparent;
+  background: var(--accent);
+  opacity: 0.7;
 }
 
 .now-strip {
@@ -680,11 +682,6 @@ main,
 
   .hero h1 {
     font-size: clamp(52px, 8vw, 72px);
-  }
-
-  .portrait-nameplate {
-    width: calc(100% + 5px);
-    margin-left: -22px;
   }
 
   .now-strip {
