@@ -322,7 +322,7 @@ main,
   z-index: 1;
   width: fit-content;
   min-width: 230px;
-  margin: -26px -18px 0 auto;
+  margin: -26px auto 0 -18px;
   padding: 15px 20px;
   display: flex;
   justify-content: center;
@@ -342,6 +342,13 @@ main,
   overflow: hidden;
   color: transparent;
   background: color-mix(in srgb, var(--accent-ink) 42%, transparent);
+}
+
+.name-han {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .now-strip {
