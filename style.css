@@ -319,25 +319,29 @@ main,
 
 .portrait-nameplate {
   position: relative;
-  margin: 15px 2px 0;
-  padding: 0;
+  z-index: 1;
+  width: fit-content;
+  min-width: 230px;
+  margin: -26px -18px 0 auto;
+  padding: 15px 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  color: var(--ink-soft);
-  font: 500 16px/1.2 var(--serif);
+  gap: 11px;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  box-shadow: 0 14px 32px rgba(50, 29, 21, 0.13);
+  font: 500 18px/1.2 var(--serif);
   letter-spacing: -0.01em;
 }
 
 .name-divider {
-  width: 28px;
+  width: 24px;
   height: 1px;
   display: block;
   overflow: hidden;
   color: transparent;
-  background: var(--accent);
-  opacity: 0.7;
+  background: color-mix(in srgb, var(--accent-ink) 42%, transparent);
 }
 
 .now-strip {
