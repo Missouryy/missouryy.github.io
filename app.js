@@ -7,6 +7,9 @@ const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matc
 function applyTheme(theme) {
   const isDark = theme === 'dark';
   root.dataset.theme = theme;
+  document.querySelectorAll("img[data-light-src][data-dark-src]").forEach((icon) => {
+    icon.src = isDark ? icon.dataset.darkSrc : icon.dataset.lightSrc;
+  });
   toggle?.setAttribute('aria-pressed', String(isDark));
   toggle?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} theme`);
   themeColor?.setAttribute('content', isDark ? '#181a18' : '#f4f1ea');
