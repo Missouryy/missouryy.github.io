@@ -883,7 +883,8 @@ main,
 .winner-badge {
   width: min(100%, 250px);
   aspect-ratio: 1650 / 473;
-  margin: 28px auto 0;
+  margin: 0;
+  flex-shrink: 0;
   background-color: var(--accent);
   -webkit-mask: url("winner-badge.png") center / 118% auto no-repeat;
   mask: url("winner-badge.png") center / 118% auto no-repeat;

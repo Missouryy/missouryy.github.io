@@ -6,7 +6,7 @@ Personal homepage of Yu Yan (严禹), B.Eng. candidate in Artificial Intelligenc
 [https://missouryy.github.io/](https://missouryy.github.io/)
 
 ## Overview
-- Personal introduction, PixelBeader, and Shredly
+- Personal introduction, Pixel Beader, and Shredly
 - Clean layout & high-legibility typography
 - Minimal HTML5, CSS3, and JavaScript
 - Responsive design with Light / Dark Mode support
