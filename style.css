@@ -952,7 +952,7 @@ main,
 .person-name .name-han { font: inherit; letter-spacing: inherit; }
 .portrait-nameplate { font: 400 16px/1.6 var(--mono); letter-spacing: normal; }
 .hero-portrait {
-  transform-origin: 50% 60%;
+  transform-origin: top right;
   transition: transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
