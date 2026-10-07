@@ -924,8 +924,8 @@ main,
 
 .hero-actions { gap: 8px; }
 
-/* Let the projects end without rules above the footer. */
-#work, .work-card:last-child { border-bottom: none; }
+/* The final project keeps its own rule; the footer has none. */
+#work { border-bottom: none; }
 .site-footer { border-top: none; }
 #shredly .work-footer { justify-content: flex-end; }
 #shredly .project-actions { margin-left: auto; }
