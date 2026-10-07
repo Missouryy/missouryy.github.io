@@ -902,3 +902,7 @@ main,
 }
 .social-icon:hover { color: var(--accent); }
 .social-icon svg { display: block; }
+
+.project-actions { align-items: center; }
+.app-store-link { display: inline-flex; padding: 10px; }
+.app-store-link img { display: block; width: auto; height: 40px; }
