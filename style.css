@@ -945,15 +945,24 @@ main,
 .person-name {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 2ch;
   text-transform: none;
 }
 .person-name .name-latin { transform: none; }
-.footer-meta .person-name .name-han { font: inherit; }
+.person-name .name-han { font: inherit; letter-spacing: inherit; }
+.portrait-nameplate { font: 400 16px/1.6 var(--mono); letter-spacing: normal; }
 .hero-portrait {
   transform-origin: 50% 60%;
   transition: transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .hero-portrait:hover { transform: rotate(-2deg); }
+  .hero-portrait:hover { transform: rotate(2deg); }
+}
+
+.winner-badge { transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.winner-badge-link:hover .winner-badge,
+.winner-badge-link:focus-visible .winner-badge { transform: scale(1.08); }
+@media (prefers-reduced-motion: reduce) {
+  .winner-badge-link:hover .winner-badge,
+  .winner-badge-link:focus-visible .winner-badge { transform: none; }
 }
