@@ -906,3 +906,12 @@ main,
 .project-actions { align-items: center; }
 .app-store-link { display: inline-flex; padding: 10px; }
 .app-store-link img { display: block; width: auto; height: 40px; }
+
+.project-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+.project-icon-link img { display: block; width: 64px; height: 64px; }
+.project-icon-link:hover { transform: translateY(-2px); }
