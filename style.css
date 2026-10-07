@@ -294,7 +294,7 @@ main,
 
 .portrait-frame {
   position: relative;
-  aspect-ratio: 0.79;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--accent-soft);
   box-shadow: var(--shadow);
@@ -313,7 +313,7 @@ main,
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 85% 50%;
+  object-position: center;
   filter: saturate(0.82) contrast(1.03);
 }
 
@@ -917,3 +917,10 @@ main,
 .project-icon-link:hover { transform: translateY(-2px); }
 
 .hero-actions { gap: 8px; }
+
+/* Let the projects end without rules above the footer. */
+#work, .work-card:last-child { border-bottom: 0; }
+#shredly .work-footer { justify-content: flex-end; }
+#shredly .project-actions { margin-left: auto; }
+.social-icon { width: 48px; height: 48px; }
+.hero-actions { gap: 12px; }
