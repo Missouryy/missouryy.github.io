@@ -857,14 +857,14 @@ main,
 .hero h1 { letter-spacing: -0.035em; line-height: 1.05; }
 .hero h1 em { padding-right: 0.08em; }
 
-/* The supplied transparent lettering takes its color from the active theme. */
+/* Preserve the supplied lettering’s original colors in both themes. */
 .hello-title {
   width: min(100%, 390px);
   aspect-ratio: 460 / 180;
   margin: 0 0 32px;
-  background-color: var(--accent);
-  -webkit-mask: url("hello-lettering.svg") center / contain no-repeat;
-  mask: url("hello-lettering.svg") center / contain no-repeat;
+  display: block;
+  height: auto;
+  object-fit: contain;
 }
 .hero h1 {
   font-size: clamp(42px, 4.6vw, 62px);
