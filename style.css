@@ -313,7 +313,7 @@ main,
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 59% 52%;
+  object-position: 85% 50%;
   filter: saturate(0.82) contrast(1.03);
 }
 
