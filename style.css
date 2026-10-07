@@ -840,3 +840,19 @@ main,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Keep the compact homepage readable and its project links below the header. */
+.work-card { scroll-margin-top: 90px; }
+.site-nav a, .button, .text-link, .project-actions a { font-size: 14px; }
+.eyebrow, .section-kicker, .work-number, .work-meta, .footer-meta { font-size: 12px; }
+.site-footer { justify-content: flex-end; padding-top: 36px; }
+@media (max-width: 700px) {
+  .nav-shell { grid-template-columns: auto 1fr auto; gap: 16px; }
+  .site-nav { display: flex; justify-content: center; gap: 14px; }
+  .site-nav a { font-size: 12px; }
+  .hero h1 { font-size: clamp(42px, 12vw, 62px); line-height: 1.05; }
+  .site-footer { padding-top: 28px; }
+}
+
+.hero h1 { letter-spacing: -0.035em; line-height: 1.05; }
+.hero h1 em { padding-right: 0.08em; }
