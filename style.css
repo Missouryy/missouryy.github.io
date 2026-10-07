@@ -888,3 +888,16 @@ main,
   -webkit-mask: url("winner-badge.png") center / 118% auto no-repeat;
   mask: url("winner-badge.png") center / 118% auto no-repeat;
 }
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: 6px;
+}
+.social-icon:hover { color: var(--accent); }
+.social-icon svg { display: block; }
