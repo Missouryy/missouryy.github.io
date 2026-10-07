@@ -915,3 +915,5 @@ main,
 }
 .project-icon-link img { display: block; width: 64px; height: 64px; }
 .project-icon-link:hover { transform: translateY(-2px); }
+
+.hero-actions { gap: 8px; }
