@@ -115,6 +115,8 @@ button:focus-visible {
   font: 600 24px/1 var(--serif);
   letter-spacing: -0.04em;
   text-decoration: none;
+  /* Center the visible capitals within the navigation, accounting for font metrics. */
+  transform: translateY(3px);
 }
 
 .wordmark span {
