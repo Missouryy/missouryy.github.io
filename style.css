@@ -13,6 +13,8 @@
   --sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "DM Mono", "SFMono-Regular", Consolas, monospace;
   --shell: min(1120px, calc(100vw - 48px));
+  --award-width: 250px;
+  --project-icon-size: calc(var(--award-width) * 473 / 1650);
 }
 
 [data-theme="dark"] {
@@ -883,7 +885,7 @@ main,
 }
 
 .winner-badge {
-  width: min(100%, 250px);
+  width: min(100%, var(--award-width));
   aspect-ratio: 1650 / 473;
   margin: 0;
   flex-shrink: 0;
@@ -917,8 +919,8 @@ main,
 }
 .project-icon-link img {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: var(--project-icon-size);
+  height: var(--project-icon-size);
   transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .project-icon-link:hover img,
@@ -936,7 +938,7 @@ main,
 
 .winner-badge-link {
   display: block;
-  width: min(100%, 250px);
+  width: min(100%, var(--award-width));
   flex-shrink: 0;
 }
 @media (prefers-reduced-motion: reduce) {
