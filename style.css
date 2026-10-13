@@ -119,6 +119,7 @@ button:focus-visible {
   display: block;
   width: 72px;
   height: auto;
+  transform: translateY(-3px);
 }
 
 .site-nav {
