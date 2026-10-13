@@ -115,11 +115,8 @@ button:focus-visible {
   text-decoration: none;
 }
 
-.wordmark img {
-  display: block;
-  width: 72px;
-  height: auto;
-  transform: translateY(-3px);
+.wordmark span {
+  color: var(--accent);
 }
 
 .site-nav {
@@ -881,7 +878,6 @@ main,
 @media (max-width: 700px) {
   .hero-copy { display: block; }
   .hero { gap: 36px; }
-  .wordmark img { width: 56px; }
   .hero h1 { font-size: clamp(36px, 11.5vw, 56px); }
   .hero-intro { margin-top: 24px; }
 }
