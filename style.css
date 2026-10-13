@@ -117,7 +117,7 @@ button:focus-visible {
 
 .wordmark img {
   display: block;
-  width: 92px;
+  width: 72px;
   height: auto;
 }
 
@@ -868,7 +868,7 @@ main,
 }
 
 .hero h1 {
-  font-size: clamp(42px, 4.6vw, 62px);
+  font-size: clamp(48px, 6vw, 80px);
   font-family: "Macintosh Skeletal Filled", var(--serif);
   font-weight: 400;
   font-synthesis: none;
@@ -880,8 +880,8 @@ main,
 @media (max-width: 700px) {
   .hero-copy { display: block; }
   .hero { gap: 36px; }
-  .wordmark img { width: 70px; }
-  .hero h1 { font-size: clamp(34px, 9.5vw, 48px); }
+  .wordmark img { width: 56px; }
+  .hero h1 { font-size: clamp(36px, 11.5vw, 56px); }
   .hero-intro { margin-top: 24px; }
 }
 
