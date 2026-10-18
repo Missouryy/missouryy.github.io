@@ -326,6 +326,9 @@ html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100sv
 .event-badge .badge-bottom{border-radius:0}
 .event-badge .badge-top strong{font-size:clamp(16px,2.25vw,34px)}
 @media(max-width:700px){.event-badge .badge-top strong{font-size:20px}}
+/* Extend only the dark tail; keep the original 1.5:1 lettering canvas. */
+.event-badge{aspect-ratio:1/1.58770584;transform-origin:50% 47.23796948%}
+.badge-content{position:relative;display:flex;flex-direction:column;width:100%;height:150cqw;flex:none}
 </style></head>
 <body>
 <a class="skip-link" href="#cover">Skip to content</a>
@@ -345,7 +348,7 @@ html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100sv
 
 <figure class="event-photo photo-a clip"><span class="tape"></span><img src="assets/homepage/wwdc26-1.jpg" alt="A personal photo from WWDC26" width="1500" height="2000"><figcaption>Tim Cook</figcaption></figure>
 <figure class="event-photo photo-b clip"><span class="tape"></span><img src="assets/homepage/wwdc26-2.jpg" alt="A second personal photo from WWDC26" width="1500" height="2000"><figcaption>John Ternus</figcaption></figure>
-<a class="event-badge clip" href="https://developer.apple.com/swift-student-challenge/" target="_blank" rel="noopener" aria-label="Yu — 2026 Distinguished Winner, WWDC26; visit Swift Student Challenge"><div class="badge-top"><strong>Yu</strong><svg class="badge-winner" viewBox="0 3 200 15" role="img" aria-label="2026 Distinguished Winner"><text x="0" y="15" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="currentColor" textLength="200" lengthAdjust="spacingAndGlyphs">2026 Distinguished Winner</text></svg></div><div class="badge-bottom"><svg class="badge-lettering" viewBox="0 0 120 174" role="img" aria-label="WWDC26"><g fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="76"><text x="0" y="56" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">VVV</text><text x="0" y="113" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">DC</text><text x="0" y="170" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">26</text></g></svg><span class="badge-apple" aria-label="Apple"></span></div></a>
+<a class="event-badge clip" href="https://developer.apple.com/swift-student-challenge/" target="_blank" rel="noopener" aria-label="Yu — 2026 Distinguished Winner, WWDC26; visit Swift Student Challenge"><div class="badge-content"><div class="badge-top"><strong>Yu</strong><svg class="badge-winner" viewBox="0 3 200 15" role="img" aria-label="2026 Distinguished Winner"><text x="0" y="15" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="currentColor" textLength="200" lengthAdjust="spacingAndGlyphs">2026 Distinguished Winner</text></svg></div><div class="badge-bottom"><svg class="badge-lettering" viewBox="0 0 120 174" role="img" aria-label="WWDC26"><g fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="76"><text x="0" y="56" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">VVV</text><text x="0" y="113" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">DC</text><text x="0" y="170" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">26</text></g></svg><span class="badge-apple" aria-label="Apple"></span></div></div></a>
 <div class="bottom"><span class="chapter">A MOMENT THAT STAYS.</span><span class="number">02</span></div>
 </div></section>
 <section class="sheet three apps-page" id="apps" aria-label="Apps"><div class="sheet-inner"><div class="eyebrow"><span>CREATE</span><span>DEVELOPER</span></div><h2 class="condensed section-title">MADE.<br>BY ME.</h2>
@@ -393,7 +396,8 @@ function measureCollage(){
   layers.sort((a,b)=>(parseInt(getComputedStyle(a.el).zIndex)||0)-(parseInt(getComputedStyle(b.el).zIndex)||0));
   layers.forEach((layer,rank)=>{
    layer.offset=panelHeight*Math.min(.32,.12+rank*.05);
-   let x=layer.el.offsetWidth/2,y=layer.el.offsetHeight/2;
+   const origin=getComputedStyle(layer.el).transformOrigin.split(' ').map(parseFloat);
+   let x=origin[0],y=origin[1];
    for(let node=layer.el;node&&node!==sheets[i];node=node.offsetParent){x+=node.offsetLeft;y+=node.offsetTop;}
    layer.x=x-sheets[i].clientWidth/2;layer.y=y;
   });
