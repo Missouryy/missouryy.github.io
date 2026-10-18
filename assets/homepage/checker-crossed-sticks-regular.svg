@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<defs>
+ <pattern id="checker" width="80" height="80" patternUnits="userSpaceOnUse"><path fill="#f1eee7" d="M0 0h80v80H0z"/><path fill="#292b28" d="M0 0h40v40H0zM40 40h40v40H40z"/></pattern>
+ <pattern id="hatching" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)"><path fill="#f1eee7" d="M0 0h5v5H0z"/><path d="M0 0v5" stroke="#506067" stroke-width=".65" opacity=".6"/></pattern>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+</defs>
+<path fill="url(#checker)" d="M0 0h800v600H0z"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <g stroke="#292b28" stroke-width="66"><path d="M260 486 454 111"/><path d="M346 111 540 486"/><path d="M165 361H635"/></g>
+ <g stroke="url(#hatching)" stroke-width="62"><path d="M260 486 454 111"/><path d="M346 111 540 486"/><path d="M165 361H635"/></g>
+</g>
+<g fill="#506067" opacity=".74"><path d="m400 147-35 68 35 68 35-68z"/><path d="m290 330-32 62h70l32-62z"/><path d="m440 330 32 62h70l-32-62z"/></g>
+<path d="M0 0h800v600H0z" filter="url(#grain)" opacity=".075" style="mix-blend-mode:multiply"/>
+</svg>

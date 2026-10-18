@@ -1,131 +1,447 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4f1ea">
-  <link rel="icon" href="favicon.ico?v=baseline-2" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=baseline-2">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=baseline-2">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=baseline-2">
-  <title>Yu Yan — AI &amp; App Developer</title>
-  <meta name="description" content="Yu Yan — independent developer. Be you. Be boundless. I believe technology should respect our attention, invite discovery, and leave room for life beyond the screen.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://missouryy.github.io/">
-  <meta property="og:title" content="Yu Yan — AI &amp; App Developer">
-  <meta property="og:description" content="Be you. Be boundless. I believe technology should respect our attention, invite discovery, and leave room for life beyond the screen.">
-  <meta property="og:image" content="https://missouryy.github.io/og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://missouryy.github.io/og.png">
-  <link rel="preload" href="fonts/macintosh-skeletal-filled.woff2?v=boundless-1" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=yy-center-1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
-  <script src="app.js?v=theme-icons-1" defer></script>
-</head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yu Yan — AI &amp; App Developer</title>
+<meta name="description" content="Yu Yan — independent developer. Be you. Be boundless. I believe technology should respect our attention, invite discovery, and leave room for life beyond the screen.">
+<meta name="theme-color" content="#f1eee7">
+<link rel="canonical" href="https://missouryy.github.io/">
+<meta property="og:url" content="https://missouryy.github.io/">
+<meta property="og:type" content="website"><meta property="og:title" content="Yu Yan — AI &amp; App Developer">
+<meta property="og:description" content="Be you. Be boundless. Technology that respects attention, invites discovery, and leaves room for life beyond the screen.">
+<meta property="og:image" content="https://missouryy.github.io/assets/homepage/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/homepage/favicon-editorial.svg"><link rel="icon" href="assets/homepage/favicon.ico?v=editorial"><link rel="icon" type="image/png" sizes="32x32" href="assets/homepage/favicon-32.png?v=editorial"><link rel="icon" type="image/png" sizes="16x16" href="assets/homepage/favicon-16.png?v=editorial"><link rel="apple-touch-icon" href="assets/homepage/apple-touch-icon.png?v=editorial">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+:root{--paper:#f1eee7;--ink:#292b28;--red:#cec3b7;--acid:#d1d3c3;--blue:#506067}
+main{padding-top:54px;position:relative}.stage{position:sticky;top:54px;height:max(650px,calc(100svh - 54px));overflow:hidden;isolation:isolate}*{box-sizing:border-box}html{scroll-behavior:auto;scroll-padding-top:54px}body{margin:0;background:var(--ink);color:var(--ink);font-family:Arial,'Noto Sans SC',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}::selection{background:var(--acid);color:var(--ink)}
+.bar{position:fixed;top:0;left:0;right:0;height:54px;background:var(--paper);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 3vw;border-bottom:1px solid var(--ink);font-size:11px;letter-spacing:.06em}.brand{font-size:16px;font-weight:900;letter-spacing:-.04em}.bar nav{display:flex;gap:28px}.bar a:hover{text-decoration:underline;text-underline-offset:5px}.edition{font-family:monospace}.progress{position:absolute;bottom:-2px;left:0;background:var(--ink);height:3px;width:0}
+.sheet{height:100%;position:absolute;inset:0;overflow:hidden;isolation:isolate;box-shadow:0 -12px 36px #0002;transform-origin:50% 0;will-change:transform;scroll-margin-top:0}.sheet:after{content:'';position:absolute;inset:0;pointer-events:none;z-index:20;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' opacity='.45' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}.sheet-inner{height:100%;position:relative;padding:28px 4vw 25px}.eyebrow{display:flex;justify-content:space-between;font-family:monospace;font-size:11px;letter-spacing:.09em}.condensed{font-family:'Barlow Condensed',Impact,'Arial Narrow',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.79}.chapter{font-family:monospace;font-size:11px;letter-spacing:.07em}.bottom{position:absolute;bottom:25px;left:4vw;right:4vw;display:flex;align-items:end;justify-content:space-between;font-size:11px}.bottom p{max-width:290px;line-height:1.8;margin:0}.scroll{display:flex;align-items:center;gap:16px;letter-spacing:.1em;font-family:monospace}.scroll span{font-size:25px}.chip{font-family:monospace;font-size:11px;padding:9px 13px;border:1px solid currentColor;display:inline-block;background:var(--paper)}.clip{transition:transform .35s ease,box-shadow .35s ease;cursor:grab}.clip:hover{transform:rotate(0deg) translateY(-9px)!important;box-shadow:9px 12px 0 #0002}.tape{position:absolute;width:90px;height:24px;background:#f2e4bb99;left:50%;top:-12px;transform:translateX(-50%) rotate(-5deg);z-index:2}.sticker{position:absolute;z-index:5}.scribble{font-family:Georgia,serif;font-style:italic}
+.one{background:var(--paper)}.one h1{position:absolute;left:4vw;top:16%;font-size:clamp(115px,21vw,360px);margin:0;color:var(--ink);z-index:1}.one h1 span{display:block}.one h1 span:last-child{margin-left:17vw}.intro-note{position:absolute;right:4vw;top:14%;width:190px;font-size:12px;line-height:1.8}.intro-note:before{content:'↳';display:block;font-size:34px;line-height:1;margin-bottom:12px}.art-one{position:absolute;left:43%;top:26%;width:25%;height:47%;background:var(--blue);transform:rotate(-9deg);z-index:3;box-shadow:8px 10px 0 #0001;padding:16px;display:flex;flex-direction:column;justify-content:space-between;color:var(--paper)}.art-one svg{width:100%;height:80%;overflow:visible}.art-caption{display:flex;justify-content:space-between;font:10px monospace;letter-spacing:.1em}.round-sticker{background:var(--acid);border-radius:50%;width:112px;height:112px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2;font-size:20px;font-weight:900;right:20%;top:59%;transform:rotate(12deg)}.red-note{left:9%;top:69%;font-size:21px;transform:rotate(-7deg);border-bottom:2px solid var(--ink);padding-bottom:4px}.vertical{position:absolute;right:16px;top:47%;writing-mode:vertical-rl;font:10px monospace;letter-spacing:.1em}.number{font-family:'Barlow Condensed',Impact,sans-serif;font-size:28px}
+.two{background:var(--red)}.two h2{font-size:clamp(120px,20vw,340px);margin:7vh 0 0;position:relative;z-index:1}.two h2 span{display:block}.two h2 span:last-child{margin-left:30%}.two .brief{position:absolute;top:19%;right:5%;width:210px;line-height:1.8;font-size:12px}.art-two{background:var(--paper);width:24%;height:49%;position:absolute;left:37%;top:24%;transform:rotate(10deg);z-index:3;padding:17px;box-shadow:8px 10px 0 #0002}.art-two .graphic{height:86%;background:var(--ink);position:relative;overflow:hidden;display:grid;place-items:center}.ripple{width:140%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle at 50%,var(--acid) 0 3px,var(--ink) 4px 12px);transform:scaleY(.78) rotate(-35deg)}.art-two .art-caption{padding-top:12px}.ticket{position:absolute;left:16%;top:58%;width:180px;padding:19px;background:var(--acid);transform:rotate(-12deg);z-index:4;border-left:7px dotted var(--red)}.ticket strong{display:block;font-size:29px;line-height:1}.ticket small{font:10px monospace;display:block;margin-top:14px}.two .tiny-star{right:15%;top:61%;font-size:100px;line-height:1;transform:rotate(10deg)}.two .bottom{border-top:1px solid #2226;padding-top:17px}
+.three{background:var(--acid)}.three h2{font-size:clamp(130px,22vw,370px);position:absolute;left:4vw;top:14%;margin:0;z-index:1}.three h2 span{display:block}.three h2 span:last-child{margin-left:24vw}.art-three{width:25%;height:48%;position:absolute;left:37%;top:28%;z-index:3;transform:rotate(-7deg);background:var(--paper);padding:15px;box-shadow:9px 12px 0 #0002}.art-three .checker{height:87%;position:relative;overflow:hidden;background:repeating-conic-gradient(var(--blue) 0 25%,var(--paper) 0 50%) 0 0/52px 52px}.checker:after{content:'';position:absolute;inset:15%;border-radius:50%;background:var(--red);mix-blend-mode:multiply}.art-three .art-caption{padding-top:12px}.caption-strip{position:absolute;left:8%;top:66%;background:var(--blue);color:var(--paper);padding:12px 20px;transform:rotate(5deg);font-size:20px;z-index:4}.three .annotation{position:absolute;right:7%;top:37%;font-size:24px;line-height:1.2;transform:rotate(7deg)}.three .annotation span{font-size:55px;display:block}.three .bottom{border-top:1px solid #2225;padding-top:17px}.three .corner{position:absolute;right:6%;top:17%;font:11px monospace;line-height:1.6;max-width:150px}
+.four{background:var(--blue);color:var(--paper)}.four h2{font-size:clamp(110px,19vw,320px);margin:11vh 0 0}.four h2 span{display:block}.four h2 span:last-child{margin-left:19vw}.four .mail{position:absolute;left:41%;top:46%;background:var(--acid);color:var(--ink);padding:28px 40px;transform:rotate(-9deg);font-weight:900;font-size:clamp(25px,4vw,60px);z-index:4;box-shadow:8px 10px 0 #1113;cursor:pointer;border:0}.four .about{position:absolute;top:19%;right:6%;font-size:12px;width:200px;line-height:1.8}.four .bottom{border-top:1px solid #eee6;padding-top:17px}.back{background:none;color:inherit;border:1px solid currentColor;border-radius:50%;width:52px;height:52px;font-size:23px;cursor:pointer}.back:hover{background:var(--paper);color:var(--blue)}.endnote{height:22vh;min-height:150px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:4vw;position:relative;z-index:10;font:11px monospace;line-height:1.8}.endnote strong{font-size:25px}.index{position:fixed;right:20px;bottom:22px;z-index:40;display:flex;gap:6px;padding:9px;background:var(--paper);border:1px solid var(--ink);box-shadow:3px 3px 0 #0002}.index a{width:25px;height:25px;display:grid;place-items:center;font:10px monospace}.index a[aria-current=true]{background:var(--ink);color:var(--paper)}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(min-width:1600px){.stage{height:max(780px,calc(100svh - 54px))}.intro-note,.two .brief,.four .about{font-size:15px;width:250px}.bottom p{font-size:13px;max-width:360px}}
+@media(max-width:700px){.bar{padding:0 20px}.bar nav{gap:15px}.edition{display:none}.stage{height:max(640px,calc(100svh - 54px))}.sheet-inner{padding:24px}.eyebrow{font-size:9px}.one h1{top:22%;left:5%;font-size:25vw}.one h1 span:last-child{margin-left:5vw}.intro-note{top:10%;right:6%;width:160px;font-size:10px}.intro-note:before{display:none}.art-one{left:35%;top:34%;width:43%;height:35%;padding:12px}.round-sticker{right:9%;top:63%;width:80px;height:80px;font-size:15px}.red-note{left:7%;top:71%;font-size:16px}.bottom{left:6%;right:6%;bottom:25px;gap:20px}.bottom p{max-width:210px;font-size:10px}.scroll{font-size:9px;gap:8px}.two h2{font-size:28vw;margin-top:15vh}.two h2 span:last-child{margin-left:12%}.two .brief{top:10%;right:6%;font-size:10px;width:150px}.art-two{left:36%;top:34%;width:43%;height:37%;padding:12px}.ticket{left:6%;top:60%;width:135px;padding:15px}.ticket strong{font-size:23px}.two .tiny-star{font-size:70px;right:7%;top:70%}.three h2{top:22%;font-size:30vw}.three h2 span:last-child{margin-left:4vw}.art-three{left:32%;top:36%;width:45%;height:35%;padding:12px}.three .corner{top:10%;right:6%;font-size:10px;width:125px}.caption-strip{top:68%;font-size:14px;left:7%}.three .annotation{top:77%;right:10%;font-size:16px}.three .annotation span{display:none}.four h2{font-size:23vw;margin-top:20vh}.four h2 span:last-child{margin-left:2vw}.four .about{top:10%;right:6%;width:160px;font-size:10px}.four .mail{left:15%;top:55%;font-size:8vw;padding:25px}.index{right:12px;bottom:12px;gap:1px;padding:4px}.index a{width:21px;height:21px}.endnote{padding:24px;gap:30px;font-size:9px}.endnote strong{font-size:20px}.vertical{display:none}.number{font-size:23px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.clip{transition:none}.sheet{will-change:auto}}
+
+/* Personal portfolio content, composed around the retained collage geometry. */
+@font-face{font-family:Macintosh;src:url('assets/homepage/fonts/macintosh-skeletal-filled.woff2') format('woff2');font-display:swap}
+.skip-link{position:fixed;top:-80px;left:16px;z-index:100;background:var(--ink);color:var(--paper);padding:12px}.skip-link:focus{top:8px}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+.bar .brand{letter-spacing:-.02em}.bar nav{gap:22px}.bar .edition{letter-spacing:.06em}.eyebrow{gap:20px;line-height:1.5}.art-caption{line-height:1.4}.clip{cursor:default}.clip a{cursor:pointer}
+.one h1{top:15%;font-size:clamp(100px,17vw,290px);line-height:.85;letter-spacing:-.025em}.one h1 span:last-child{margin-left:0;font-size:.69em;margin-top:.08em}
+.one .intro-note{top:11%;right:4vw;width:210px;line-height:1.65;font-size:12px}.one .intro-note:before{display:none}.one .intro-note strong{display:block;font-size:23px;letter-spacing:-.05em;margin-bottom:9px}.one .intro-note .han{font-weight:400;font-size:16px;letter-spacing:.05em}.hero-portrait{position:absolute;left:58%;top:34%;width:25%;height:49%;padding:12px 12px 34px;background:var(--paper);box-shadow:8px 10px 0 #0002;transform:rotate(7deg);z-index:4}.hero-portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 70%;filter:saturate(.58)}.portrait-label{display:flex;justify-content:space-between;font:10px monospace;margin-top:10px;letter-spacing:.04em}.one .art-one{left:36%;top:48%;width:19%;height:31%;padding:13px;transform:rotate(-9deg)}.one .round-sticker{left:77%;right:auto;top:68%;width:100px;height:100px;font-size:19px}.one .red-note{top:63%;left:6%;font-size:25px}.one .bottom p{max-width:none}.one .bottom .contact-inline{display:flex;gap:22px;font:11px monospace;align-items:center}.contact-inline a:hover{text-decoration:underline}.one .vertical{top:42%}
+.project-heading{margin:0!important;position:absolute!important;left:4vw;top:15%;z-index:1!important;line-height:.8}.two h2.project-heading{font-size:clamp(115px,17vw,290px)}.two h2.project-heading span:last-child{margin-left:13vw}.three h2.project-heading{font-size:clamp(145px,23vw,380px);top:20%}.three h2.project-heading span:last-child{margin-left:0}
+.project-copy{position:absolute;left:4vw;bottom:112px;width:30%;font-size:clamp(12px,1.05vw,16px);line-height:1.65;z-index:7}.project-copy .lede{font-size:clamp(15px,1.35vw,20px);line-height:1.45;font-weight:500;margin:0 0 16px}.project-copy .detail{margin:0;opacity:.85}.project-meta{font:11px monospace;letter-spacing:.03em;display:flex;justify-content:space-between;gap:15px;margin-bottom:18px}.project-copy .external{display:inline-block;margin-top:18px;font:11px monospace;border-bottom:1px solid;padding-bottom:5px}
+.two .art-two{left:40%;top:41%;width:21%;height:35%}.two .ticket{left:65%;top:18%;width:175px;padding:17px;transform:rotate(8deg)}.ticket strong{font-size:27px}.ticket small{line-height:1.6}.two .tiny-star{right:8%;top:62%;font-size:85px}.app-cutout{position:absolute;right:10%;top:40%;z-index:5;width:18%;transform:rotate(-10deg)}.app-cutout img{display:block;width:100%;height:auto}.app-dark{position:absolute;right:21%;top:57%;width:10%;z-index:6;transform:rotate(12deg)}.app-dark img{display:block;width:100%;height:auto}.project-link-art{display:block}.project-link-art:hover img{transform:translateY(-4px);transition:transform .25s}
+.two .bottom,.three .bottom{align-items:center;bottom:24px;min-height:60px}.two .bottom .number,.three .bottom .number{margin-left:auto}.award-link{display:block;width:clamp(170px,18vw,270px);flex-shrink:0}.winner-badge{display:block;width:100%;aspect-ratio:1650/473;background:var(--ink);mask:url('assets/homepage/winner-badge.png') center/118% auto no-repeat;-webkit-mask:url('assets/homepage/winner-badge.png') center/118% auto no-repeat}.store-link{display:inline-flex;align-items:center;margin-left:20px}.store-link img{height:38px;width:auto;display:block}.project-actions{display:flex;gap:22px;align-items:center}.project-actions>a:not(.store-link){font:11px monospace;border-bottom:1px solid;padding-bottom:5px}
+.three .art-three{left:39%;top:43%;width:23%;height:34%}.three .caption-strip{top:67%;left:52%;font-size:16px;z-index:7;white-space:nowrap}.three .annotation{right:7%;top:17%;font-size:24px}.three .annotation span{font-size:45px}.three .app-cutout{right:10%;top:34%;transform:rotate(9deg)}.three .app-dark{right:7%;top:59%;transform:rotate(-12deg)}
+.four h2{font-size:clamp(110px,17vw,290px);margin-top:12vh;line-height:.8}.four h2 span:last-child{margin-left:12vw;font-size:.85em;margin-top:.08em}.four .about{top:12%;right:5%;width:225px}.four .about strong{display:block;font-size:15px;margin-bottom:8px}.four .mail{left:48%;top:49%;font-size:clamp(23px,3vw,48px);padding:25px 35px;cursor:pointer}.manifesto{position:absolute;left:4vw;bottom:17%;max-width:42%;font-size:clamp(17px,1.9vw,28px);line-height:1.5;letter-spacing:-.025em;z-index:5}.social-links{display:flex;gap:16px;align-items:center}.social-icon{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center}.social-icon svg{width:29px;height:29px}.social-links .email-icon g{stroke:var(--blue)}.social-links .text-link{font:11px monospace;letter-spacing:.02em}.four .bottom{align-items:center}.four .bottom p{font:11px monospace;max-width:none}.endnote strong{font-size:25px}.endnote .footer-links{display:flex;gap:24px}
+@media(min-width:1600px){.one .intro-note{font-size:14px;width:250px}.project-copy{bottom:135px}.two .ticket{width:210px}.four .about{font-size:14px;width:260px}.one .round-sticker{width:125px;height:125px;font-size:23px}}
+@media(max-width:1000px) and (min-width:701px){.project-copy{width:34%;font-size:11px}.project-copy .lede{font-size:14px}.two h2.project-heading{font-size:17vw}.two .ticket{width:140px;padding:13px}.ticket strong{font-size:22px}.ticket small{font-size:9px}.one .intro-note{width:180px;font-size:11px}.four .about{width:190px;font-size:11px}.manifesto{font-size:19px}.two .bottom{gap:10px}.store-link{margin-left:0}.project-actions{gap:12px}}
+@media(max-width:700px){
+.bar{padding:0 16px}.bar .brand{font-size:17px}.bar nav{gap:12px;font-size:10px}.bar nav a:last-child{display:none}.eyebrow{font-size:8px;gap:12px}.eyebrow span:last-child{text-align:right;max-width:48%}.one h1{top:14%;left:6%;font-size:25vw}.one h1 span:last-child{font-size:.64em;margin-left:0;margin-top:.14em}.one .intro-note{top:45%;left:6%;right:auto;width:34%;font-size:10px;line-height:1.6}.one .intro-note strong{font-size:18px;line-height:1.4}.one .intro-note .han{font-size:13px;display:block;margin-top:3px}.hero-portrait{top:46%;left:46%;width:44%;height:30%;padding:8px 8px 25px}.portrait-label{font-size:8px;margin-top:7px}.one .art-one{left:13%;top:64%;width:27%;height:18%;padding:10px}.one .art-one .art-caption{font-size:7px}.one .round-sticker{left:74%;top:75%;width:66px;height:66px;font-size:13px}.one .red-note{top:84%;left:7%;font-size:17px}.one .bottom{bottom:20px;align-items:center}.one .bottom .contact-inline{gap:12px;font-size:9px;position:absolute;right:0;bottom:33px}.one .bottom .scroll{font-size:8px}.one .bottom .number{display:none}
+.two h2.project-heading{top:17%;font-size:26vw}.two h2.project-heading span:last-child{margin-left:7vw}.three h2.project-heading{top:20%;font-size:29vw}.project-copy{left:6%;bottom:104px;width:60%;font-size:11px;line-height:1.55}.project-copy .lede{font-size:13px;line-height:1.45;margin-bottom:12px}.project-copy .detail{font-size:11px}.project-meta{font-size:8px;gap:8px;margin-bottom:12px}.project-copy .external{font-size:9px;margin-top:12px}.two .art-two{left:72%;top:52%;width:23%;height:23%;padding:8px}.art-two .art-caption{font-size:6px;padding-top:6px}.two .ticket{left:auto;right:7%;top:12%;width:120px;padding:10px;border-left-width:5px;transform:rotate(7deg)}.ticket strong{font-size:18px}.ticket small{font-size:7px;margin-top:7px}.two .app-cutout{top:36%;right:11%;width:25%}.two .app-dark{right:5%;top:47%;width:15%}.two .tiny-star{font-size:40px;right:10%;top:79%}.two .bottom,.three .bottom{bottom:43px;min-height:55px;gap:8px}.award-link{width:145px}.store-link{margin-left:0}.store-link img{height:29px}.two .bottom .number{font-size:18px}.project-actions{gap:8px}.project-actions>a:not(.store-link){font-size:8px}.three .app-cutout{top:38%;right:9%;width:26%}.three .app-dark{right:5%;top:51%;width:15%}.three .art-three{left:73%;top:58%;width:21%;height:18%;padding:7px}.art-three .art-caption{font-size:6px;padding-top:5px}.three .caption-strip{top:84%;left:54%;font-size:8px;padding:8px;white-space:normal;max-width:45%}.three .annotation{top:11%;right:8%;font-size:16px}.three .annotation span{display:none}.three .bottom .chapter{font-size:9px}.three .bottom .number{font-size:20px}
+.four h2{font-size:27vw;margin-top:16vh}.four h2 span:last-child{font-size:.68em;margin-left:0;white-space:nowrap}.four .about{top:10%;right:6%;width:auto;font-size:10px}.four .about strong{font-size:11px;margin:0}.four .about p{display:none}.manifesto{left:6%;bottom:25%;max-width:84%;font-size:16px;line-height:1.55}.four .mail{left:13%;top:49%;padding:20px 24px;font-size:24px}.four .bottom{bottom:43px}.four .bottom p{font-size:9px}.social-links{gap:9px}.social-icon{width:30px;height:30px}.social-icon svg{width:24px;height:24px}.social-links .text-link{display:none}.endnote{font-size:8px}.endnote .footer-links{gap:12px}.index{bottom:8px}
+}
+
+/* Personal calling card and quieter cover navigation. */
+.one .business-card{left:29%;top:48%;width:23%;height:32%;min-height:215px;padding:22px;overflow:visible;isolation:isolate}
+.business-card .card-orbit{position:absolute;width:44%;height:65%;right:0;top:12%;opacity:.16;z-index:-1;pointer-events:none}
+.card-top{display:flex;justify-content:space-between;font:8px monospace;letter-spacing:.12em}
+.card-identity{margin:auto 0}.card-identity strong{display:block;font:700 clamp(26px,3.2vw,56px)/1 'Barlow Condensed',sans-serif;letter-spacing:.02em}
+.card-identity>span{display:block;font-size:16px;letter-spacing:.22em;margin-top:8px}.card-identity p{font:10px monospace;margin:12px 0 0}
+.card-links{display:flex;gap:20px;border-top:1px solid #f1eee74a;padding-top:13px}
+.card-links a{display:flex;align-items:center;gap:7px;font:10px monospace;padding:3px 0}
+.business-card .card-links svg{width:17px;height:17px;flex:none}
+.card-links a:hover{opacity:.65}.card-links a:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+.one .hero-portrait{padding:12px;background:#fff}.one .hero-portrait img{filter:none}
+.index{top:50%;bottom:auto;right:20px;transform:translateY(-50%);flex-direction:column}
+@media(max-width:700px){
+.one .business-card{left:4%;top:51%;width:40%;height:30%;min-height:190px;padding:15px;z-index:5}
+.one .hero-portrait{padding:8px}.card-top{font-size:6px;letter-spacing:.05em}.card-identity strong{font-size:32px}.card-identity>span{font-size:14px;margin-top:5px}
+.card-identity p{font-size:8px;line-height:1.5;max-width:120px;margin-top:8px}
+.card-links{gap:12px;padding-top:9px}.card-links a{font-size:8px;gap:5px}.business-card .card-links svg{width:15px;height:15px}
+.index{right:8px;top:50%;bottom:auto;gap:4px;padding:5px}.index a{width:27px;height:27px}
+}
+
+.one .round-sticker img{width:64%;height:64%;object-fit:contain;display:block;transform:translateY(10%)}
+
+/* Fixed landscape proportions across viewport sizes. */
+.one .business-card{height:auto;min-height:0;aspect-ratio:5/3;padding:clamp(14px,1.6vw,26px)}
+.card-identity{margin:0 0 auto}.card-identity strong{font-size:clamp(25px,3.1vw,54px)}
+.card-identity>span{margin-top:5px;font-size:14px}.card-identity p{margin-top:8px}
+.card-links{padding-top:9px}.one .hero-portrait{height:auto;aspect-ratio:4/3}
+.one .hero-portrait img{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:cover}
+@media(max-width:700px){
+.one .hero-portrait img{inset:8px;width:calc(100% - 16px);height:calc(100% - 16px)}
+.one .business-card{width:43%;padding:12px;top:54%}
+.card-identity strong{font-size:clamp(20px,4.9vw,32px)}.card-identity>span{font-size:11px;margin-top:3px}
+.card-identity p{font-size:7px;margin-top:5px;max-width:none}.card-links{padding-top:6px;gap:10px}
+.card-links a{font-size:7px}.business-card .card-links svg{width:13px;height:13px}
+}
+
+.one .business-card{display:grid;grid-template-columns:58% 42%;grid-template-rows:minmax(0,1fr) auto;padding-top:0}
+.business-card .card-identity{grid-column:1;grid-row:1;align-self:center;margin:0}
+.business-card .card-orbit{position:static;grid-column:2;grid-row:1;align-self:center;justify-self:center;width:100%;height:85%;max-height:100%;z-index:0}
+.business-card .card-links{grid-column:1/-1;grid-row:2}
+
+@media(min-width:1001px){
+.one .business-card{width:27%;left:27%;top:53%}
+.one .hero-portrait{width:30%;left:59%;top:32%}
+.one .round-sticker{left:82%;top:70%}
+}
+
+/* Personal chapters: field notes, applications, and research. */
+.event-page .section-title,.apps-page .section-title,.experience-page .section-title{position:absolute;left:4vw;top:11%;margin:0;font-size:clamp(90px,15vw,250px);line-height:.85;z-index:1}
+.event-copy{position:absolute;left:5%;top:37%;width:25%;max-width:390px;line-height:1.6;font-size:clamp(12px,1.05vw,17px)}.event-copy h3{font-size:clamp(23px,2.4vw,38px);line-height:1.1;margin:0 0 20px;letter-spacing:-.04em}.event-copy p{margin:0 0 14px}
+.event-photo{position:absolute;margin:0;width:21%;background:var(--paper);padding:9px 9px 26px;box-shadow:8px 10px #0002;z-index:3}.event-photo img{width:100%;height:auto;display:block;aspect-ratio:3/4;object-fit:cover}.event-photo figcaption{font:8px monospace;letter-spacing:.08em;position:absolute;bottom:9px;left:10px}.photo-a{left:43%;top:31%;transform:rotate(-7deg)}.photo-b{left:68%;top:20%;transform:rotate(7deg)}
+.event-badge{position:absolute;left:33%;top:54%;width:13%;max-width:220px;aspect-ratio:3/4.5;border-radius:14px;background:#ede9e9;box-shadow:6px 8px #0002;transform:rotate(-12deg);z-index:6;display:flex;flex-direction:column;color:#292d35}.badge-clip{position:absolute;width:29%;height:27px;top:-18px;left:35%;border:2px solid #f6f6f6a0;background:#bcc3c669;box-shadow:inset 2px 2px #fff8;border-radius:5px}.badge-top{height:43%;padding:21% 10% 7%;display:flex;flex-direction:column;justify-content:space-between}.badge-top strong{font-size:clamp(18px,2.6vw,40px)}.badge-top span{font-size:clamp(6px,.8vw,12px)}.badge-bottom{flex:1;background:#2a303b;color:#ece9ef;border-radius:0 0 14px 14px;position:relative;padding:8% 10%}.badge-bottom strong{font:500 clamp(30px,4.6vw,72px)/.77 Arial;letter-spacing:-.09em}.badge-bottom>span{position:absolute;right:10%;bottom:15%;font-size:26px}.two .event-star{left:87%;right:auto;top:74%;font-size:65px}
+.apps-grid{position:absolute;top:35%;left:8%;right:10%;bottom:12%;display:grid;grid-template-columns:1fr 1fr;gap:7%;z-index:3}.app-paper{position:relative;background:var(--paper);padding:clamp(18px,2.2vw,36px);box-shadow:8px 10px #0002;display:flex;flex-direction:column;min-height:0}.pixel-paper{transform:rotate(-3deg)}.shred-paper{transform:rotate(3deg)}.app-top{display:flex;align-items:center;justify-content:space-between;font:10px/1.7 monospace}.app-top img{width:65px;height:65px;border-radius:16px}.app-paper h3{font:700 clamp(26px,3vw,48px)/1 'Barlow Condensed';margin:15px 0 8px}.app-paper p{font-size:clamp(11px,1vw,16px);line-height:1.5;margin:0 0 10px}.app-paper .app-lede{font-weight:700}.app-paper .tech-line{font:9px/1.5 monospace;opacity:.65}.app-cta{display:flex;gap:22px;margin-top:auto;padding-top:10px;font:11px monospace}.app-cta a{border-bottom:1px solid;padding-bottom:4px}.app-award{position:absolute;right:-14px;bottom:-21px;background:var(--blue);color:var(--paper);padding:12px 18px;font:8px/1.5 monospace;transform:rotate(5deg)}.mini-checker{position:absolute;width:57px;height:57px;right:-18px;bottom:-19px;background:repeating-conic-gradient(var(--blue) 0 25%,var(--paper) 0 50%) 0 0/18px 18px;transform:rotate(-9deg)}
+.experience-page .section-title{font-size:clamp(70px,10vw,170px);top:10%;line-height:.85}.experience-grid{position:absolute;left:31%;right:8%;top:23%;bottom:16%;display:grid;grid-template-columns:1fr 1fr;gap:5%;z-index:3}.experience-card{background:var(--paper);color:var(--ink);padding:clamp(16px,2vw,32px);box-shadow:8px 10px #0002;display:flex;flex-direction:column}.experience-card:first-child{transform:rotate(-2deg)}.experience-card:last-child{transform:rotate(2deg)}.experience-meta{display:flex;flex-direction:column;gap:7px;font:9px monospace;letter-spacing:.04em}.experience-card h3{font:700 clamp(28px,3.2vw,50px)/.95 'Barlow Condensed';margin:22px 0 10px}.experience-card .role{font-size:10px;opacity:.7;min-height:30px}.experience-card h4{font-size:14px;line-height:1.3;margin:10px 0}.experience-card p{font-size:clamp(11px,.95vw,15px);line-height:1.5;margin:0 0 12px}.result{display:flex;flex-direction:column;gap:8px;border-top:1px solid #292b2830;margin-top:auto;padding-top:12px}.result strong{font:700 clamp(38px,4.5vw,70px)/1 'Barlow Condensed'}.result span{font:9px/1.5 monospace}.experience-page .bottom{border:0}
+@media(max-width:1000px){.event-copy{font-size:12px}.experience-grid{left:6%;top:33%;right:10%;bottom:13%}.experience-page .section-title{font-size:12vw;top:10%}.experience-page .section-title br{display:none}.experience-card h3{margin:12px 0 8px}.app-top img{width:48px;height:48px}.app-paper h3{margin-top:12px}.app-paper p{font-size:12px}.apps-grid{top:30%;gap:5%}}
+@media(max-width:700px){.event-page .section-title,.apps-page .section-title{font-size:18vw;top:12%}.event-copy{left:6%;top:26%;width:84%;max-width:none;font-size:11px;line-height:1.45}.event-copy h3{font-size:21px;margin-bottom:10px}.event-copy h3 br{display:none}.event-copy p{margin-bottom:8px}.event-copy p:last-child{display:none}.event-photo{width:33%;padding:6px 6px 20px}.photo-a{left:15%;top:48%}.photo-b{left:53%;top:42%}.event-photo figcaption{font-size:6px;bottom:7px;left:7px}.event-badge{width:24%;left:7%;top:66%;border-radius:9px}.badge-top strong{font-size:23px}.badge-top span{font-size:6px}.badge-bottom strong{font-size:37px}.badge-bottom>span{font-size:17px}.two .event-star{left:80%;top:76%;font-size:38px}.badge-clip{height:19px;top:-12px}
+.apps-grid{left:6%;right:13%;top:25%;bottom:10%;grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:20px}.app-paper{padding:14px 17px;display:block}.pixel-paper{transform:rotate(-2deg)}.shred-paper{transform:rotate(2deg)}.app-top{float:right;margin-left:10px}.app-top span{display:none}.app-top img{width:42px;height:42px;border-radius:10px}.app-paper h3{font-size:25px;margin:0 0 7px}.app-paper p{font-size:10px;line-height:1.4;margin-bottom:6px}.app-paper .tech-line{font-size:7px;margin-bottom:0}.app-cta{padding-top:7px;font-size:9px;gap:15px}.app-award{font-size:6px;padding:5px 8px;bottom:-10px;right:-10px}.mini-checker{width:35px;height:35px;bottom:-12px;right:-9px}
+.experience-page .section-title{font-size:14vw;top:12%}.experience-grid{left:6%;right:13%;top:26%;bottom:12%;grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:18px}.experience-card{padding:13px 15px;position:relative;display:block}.experience-meta{font-size:7px;flex-direction:row;justify-content:space-between}.experience-card h3{font-size:25px;margin:9px 0 4px}.experience-card .role{font-size:8px;min-height:0;margin-bottom:7px;max-width:70%}.experience-card h4{font-size:10px;margin:5px 0}.experience-card p{font-size:9px;line-height:1.4;margin-bottom:6px;max-width:75%}.experience-card p:nth-of-type(3){display:none}.result{position:absolute;right:12px;bottom:12px;width:21%;border:0;padding:0;gap:3px}.result strong{font-size:28px}.result span{font-size:6px;line-height:1.3}.experience-page .bottom .chapter{display:none}.experience-page .back{width:34px;height:34px;font-size:18px}.bar nav a:last-child{display:inline}.bar nav{gap:10px;font-size:9px}
+}
+
+@media(min-width:1001px){.experience-card h3{font-size:clamp(28px,3vw,44px);margin:12px 0 8px}.experience-card p{font-size:clamp(11px,.85vw,14px);line-height:1.45;margin-bottom:10px}.experience-card .role{min-height:0;font-size:9px}.experience-card h4{font-size:12px;margin:8px 0}.result strong{font-size:clamp(36px,3.4vw,54px)}.experience-grid{top:27%;bottom:16%}}
+
+@media(max-width:700px){.experience-page .section-title{font-size:13vw}.experience-card p{font-size:11px;max-width:74%}.experience-card .role{font-size:9px}.experience-card h4{font-size:11px}.result span{font-size:7px}.app-paper p{font-size:12px}.app-paper .tech-line{font-size:8px}.app-cta{font-size:10px}.event-copy{font-size:12px}}
+.badge-lettering{display:block;width:73%;height:auto;overflow:visible}.badge-bottom .badge-apple{font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;font-size:clamp(19px,2.2vw,33px);right:8%;bottom:12%;line-height:1}
+@media(max-width:700px){.event-badge{top:60%;width:22%;max-width:140px}}
+
+/* Poster first: oversized type behind unchanged geometric artwork. */
+.event-page .section-title{font-size:29vw;left:2%;top:12%;letter-spacing:-.055em;white-space:nowrap}
+.event-award{position:absolute;left:6%;top:64%;font:10px/1.6 monospace;z-index:4}.event-award strong{display:block;font:800 6vw/.95 'Barlow Condensed';margin:7px 0}.event-award span{font-size:9px}
+.event-photo.photo-a{width:24%;left:39%;top:36%}.event-photo.photo-b{width:24%;left:66%;top:23%}.event-badge{left:29%;top:48%;width:14%;z-index:6}
+.apps-page .section-title{font-size:27vw;line-height:.78;left:3%;top:12%;letter-spacing:-.035em}
+.apps-page .app-geometry{width:25%;height:49%;z-index:3}
+.apps-page .geometry-pixel{left:25%;top:29%;transform:rotate(10deg);padding:17px}
+.apps-page .geometry-shred{left:61%;top:34%;transform:rotate(-7deg);padding:15px}
+.app-stamp{position:absolute;z-index:5;width:9%;display:block}.app-stamp img{width:100%;height:auto;display:block}.stamp-pixel{left:17%;top:46%;transform:rotate(-12deg)}.stamp-shred{left:80%;top:25%;transform:rotate(12deg)}
+.app-label{position:absolute;z-index:6;background:var(--blue);color:var(--paper);padding:14px 20px;min-width:180px;box-shadow:5px 6px #0001}.app-label strong{font:700 clamp(25px,3vw,48px)/1 'Barlow Condensed';display:block}.app-label>span{display:block;font:8px monospace;letter-spacing:.08em;margin:8px 0 12px}.app-label div{display:flex;gap:20px;font:10px monospace}.app-label a{border-bottom:1px solid #f1eee770;padding-bottom:3px}.label-pixel{left:16%;top:70%;transform:rotate(-5deg)}.label-shred{left:64%;top:74%;transform:rotate(4deg)}
+.experience-page .section-title{font-size:22vw;line-height:.78;top:11%;left:2%}
+.experience-grid{top:48%;left:29%;right:10%;bottom:10%;gap:6%}
+.experience-card{padding:20px}.experience-card p:not(.role),.experience-card h4{display:none}.experience-card .role{min-height:0}.experience-card h3{font-size:3.3vw;margin:12px 0 8px}.experience-card .result{padding-top:10px}.experience-card:first-child{transform:rotate(-6deg)}.experience-card:last-child{transform:rotate(5deg)}
+@media(max-width:700px){
+.event-page .section-title{font-size:31vw;top:18%;left:1%}
+.event-photo.photo-a{width:36%;left:22%;top:43%}.event-photo.photo-b{width:34%;left:58%;top:35%}
+.event-badge{width:24%;left:9%;top:57%;max-width:145px}.event-award{left:55%;top:76%;font-size:7px}.event-award strong{font-size:11vw}.event-award span{font-size:6px}
+.apps-page .section-title{font-size:38vw;left:2%;top:15%;line-height:.85}
+.apps-page .app-geometry{width:41%;height:31%}.apps-page .geometry-pixel{left:12%;top:37%;padding:10px}.apps-page .geometry-shred{left:51%;top:49%;padding:10px}
+.app-stamp{width:17%}.stamp-pixel{left:5%;top:37%}.stamp-shred{left:77%;top:46%}.app-label{padding:10px 12px;min-width:0}.app-label strong{font-size:25px}.app-label>span{font-size:6px;margin:5px 0 8px}.app-label div{font-size:8px;gap:12px}.label-pixel{left:6%;top:65%}.label-shred{left:54%;top:79%}
+.experience-page .section-title{font-size:25vw;top:17%;line-height:.85}.experience-page .section-title br{display:block}.experience-grid{left:9%;right:13%;top:46%;bottom:12%;gap:20px}.experience-card{padding:12px 16px}.experience-card h3{font-size:27px;margin:7px 0}.experience-card .role{font-size:8px;max-width:68%}.experience-card .result{padding:0}.experience-card .result strong{font-size:30px}.experience-meta{font-size:6px}
+}
+.event-badge .badge-top{height:37%;flex-shrink:0;padding-top:22%;padding-bottom:6%}.event-badge .badge-top strong{transform:translateY(4px)}.badge-bottom .badge-apple{bottom:7%}
+.event-badge .badge-top{position:relative;display:block;padding:0}.event-badge .badge-top strong{position:absolute;left:10%;top:50%;line-height:1;transform:translateY(-50%) scaleY(.88);transform-origin:center}.badge-winner{position:absolute;left:10%;bottom:7%;width:80%;height:auto;display:block;overflow:visible}
+
+/* Collage refinements: signatures, challenge seal, and taped research labels. */
+@font-face{font-family:'Macintosh Signature';src:url('assets/homepage/fonts/MacintoshSkeletalFilled.otf') format('opentype');font-display:swap}
+.event-badge{container-type:inline-size}
+.badge-winner{bottom:10cqw}
+.event-photo{padding:14px 14px 48px}
+.event-photo figcaption{font-family:'Macintosh Signature',cursive;font-size:clamp(19px,2.2vw,34px);font-weight:400;letter-spacing:0;line-height:1.2;bottom:8px;left:14px;right:10px;white-space:nowrap}
+.app-label div{margin-top:12px}
+.experience-grid{bottom:auto;align-items:start}
+.experience-card{position:relative;padding:clamp(20px,2.2vw,36px)}
+.experience-card .role{margin-bottom:0;max-width:none}
+.experience-card .tape{width:32%;max-width:110px;height:25px;top:-13px}
+.one .business-card{left:24%}
+.one .hero-portrait{width:33%;left:57%;top:31%}
+@media(min-width:701px) and (max-width:1000px){.one .business-card{left:24%}.one .hero-portrait{width:31%;left:57%;top:34%}}
+@media(max-width:700px){
+.one .business-card{left:2%;top:56%;width:41%}
+.one .hero-portrait{left:44%;top:44%;width:48%}
+.event-photo{padding:10px 10px 38px}
+.event-photo figcaption{font-size:clamp(17px,3.7vw,25px);bottom:6px;left:10px;right:6px}
+.app-label div{margin-top:9px}
+.experience-grid{grid-template-rows:auto auto;gap:30px;bottom:auto}
+.experience-card{padding:18px 20px}
+.experience-card .role{font-size:9px;max-width:none;margin-bottom:0}
+.experience-card .tape{height:21px;top:-11px}
+}
+
+.one .messi-link{cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}
+.one .messi-link:hover,.one .messi-link:focus-visible{transform:translateY(-4px) rotate(0deg) scale(1.06);box-shadow:5px 8px 0 #0002}
+.one .messi-link:active{transform:rotate(0deg) scale(.98);box-shadow:2px 3px 0 #0002}
+@media(prefers-reduced-motion:reduce){.one .messi-link{transition:none}}
+.event-badge.clip{cursor:pointer}
+.geometry-pixel .graphic .swift-ripple-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;background:#292b28}
+
+/* Edge-to-edge artwork and a lighter second portrait. */
+.geometry-shred .checker:after{content:none}
+.geometry-shred .checker .crossed-sticks-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.event-photo.photo-b{width:21.5%;left:67%;top:24%}
+.event-badge{left:25%}
+@media(max-width:700px){.event-photo.photo-b{width:30%;left:60%;top:36%}.event-badge{left:5%}}
+
+/* Shared chapter footer and label typography. */
+.sheet .bottom{border:0;padding-top:0}
+.sheet .bottom>:first-child{font:400 11px/1.5 monospace;letter-spacing:.07em}
+.experience-card{--label-font-size:9px}
+.experience-card .experience-meta,.experience-card .role{font:400 var(--label-font-size)/1.5 monospace;letter-spacing:.04em;opacity:1}
+@media(max-width:700px){.experience-card{--label-font-size:6px}}
+.geometry-shred .checker{background:url(assets/homepage/checker-fixed-background.svg) center/cover no-repeat}
+
+/* App links belong to their prints; research becomes two interactive Polaroids. */
+.apps-page .art-caption{display:grid;grid-template-columns:1fr auto;gap:4px 10px}
+.frame-links{grid-column:1/-1;display:flex;gap:16px;font:9px/1.35 monospace;letter-spacing:0}
+.frame-links a{border-bottom:1px solid #292b2860;padding-bottom:1px}
+.frame-links a:hover{border-color:currentColor}
+.research-collage{position:absolute;inset:0;z-index:3;pointer-events:none}
+.research-frame{position:absolute;width:28%;margin:0;background:var(--paper);color:var(--ink);padding:13px;box-shadow:8px 10px #0002;pointer-events:auto}
+.magnus-frame{left:25%;top:35%;transform:rotate(-6deg)}
+.cairn-frame{left:59%;top:40%;transform:rotate(5deg)}
+.research-image{display:block;aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.research-image img{display:block;width:100%;height:100%;object-fit:cover}
+.research-caption{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;margin-top:13px;font:9px/1.45 monospace;letter-spacing:.02em;min-height:54px}
+.research-caption>:nth-child(even){text-align:right}
+.research-caption time{white-space:nowrap}
+.research-frame .tape{width:32%;max-width:110px;height:25px;top:-13px}
+.research-frame .research-label{left:-8%;bottom:28%;padding:10px 17px;min-width:0;transform:rotate(-3deg);pointer-events:none}
+.research-label strong{font-size:clamp(23px,2.5vw,42px)}
+.research-frame:focus-within{transform:rotate(0deg) translateY(-9px);box-shadow:9px 12px #0002}
+@media(max-width:1000px) and (min-width:701px){.research-frame{width:35%}.magnus-frame{left:15%;top:39%}.cairn-frame{left:55%;top:44%}.research-caption{font-size:7px}}
+@media(max-width:700px){
+.apps-page .art-caption{gap:3px 5px}.frame-links{font-size:7px;gap:10px;line-height:1.2}
+.apps-page .geometry-pixel .graphic,.apps-page .geometry-shred .checker{height:81%}
+.apps-page .art-caption{padding-top:6px}
+.research-frame{width:40%;padding:9px}
+.magnus-frame{left:6%;top:42%}.cairn-frame{left:55%;top:49%}
+.research-caption{font-size:6px;gap:5px 7px;margin-top:9px;min-height:48px;line-height:1.45}
+.research-frame .research-label{left:-6%;bottom:31%;padding:8px 10px}
+.research-label strong{font-size:clamp(18px,3.7vw,26px)}
+.research-frame .tape{height:21px;top:-11px}
+}
+
+/* One framing system, without a header offset. */
+:root{--frame-edge:clamp(10px,1vw,16px);--frame-caption:32px}
+html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100svh)}
+.one .hero-portrait,.event-photo,.apps-page .app-geometry,.research-frame{padding:var(--frame-edge)}
+.one .hero-portrait img{position:static;inset:auto;width:100%;height:100%;object-fit:cover}
+.event-photo,.apps-page .app-geometry,.research-frame{display:flex;flex-direction:column;gap:var(--frame-edge)}
+.event-photo img{flex:none}
+.event-photo figcaption{position:static;left:auto;right:auto;bottom:auto;height:var(--frame-caption);margin:0;flex:none;white-space:nowrap;line-height:1.2}
+.apps-page .geometry-pixel .graphic,.apps-page .geometry-shred .checker{flex:1;min-height:0;height:auto}
+.apps-page .art-caption{flex:none;height:var(--frame-caption);margin:0;padding:0;grid-template-columns:1fr auto;grid-template-rows:1fr 1fr;align-items:start;gap:0 10px;font-size:9px;letter-spacing:.02em}
+.apps-page .art-caption>span:first-child{grid-column:1;grid-row:1;align-self:start}
+.apps-page .art-caption>span:nth-child(2){grid-column:2;grid-row:1;align-self:start;text-align:right}
+.apps-page .frame-links{grid-column:1;grid-row:2;align-self:end;font-size:9px}
+.research-image{flex:none}
+.research-caption{height:var(--frame-caption);min-height:0;margin:0;grid-template-columns:1fr auto;grid-template-rows:1fr 1fr;align-items:start;gap:0 12px;font:9px/1.4 monospace}
+.research-caption>:nth-child(n+3){align-self:end}
+.research-caption>:nth-child(even){justify-self:end;text-align:right}
+.magnus-frame .research-caption>:nth-child(3){grid-column:1/-1;white-space:nowrap}
+.magnus-frame .research-caption>:nth-child(4){display:none}
+.research-frame .research-label{background:#c5a18a;color:#292b28;bottom:calc(var(--frame-caption) + 3*var(--frame-edge));}
+.one .messi-link{background:#bfced2}
+.endnote{display:grid;grid-template-columns:1fr auto 1fr;gap:24px}
+.endnote>span:last-child{justify-self:end;text-align:right}
+.index{isolation:isolate}
+.index:before{content:'';position:absolute;left:0;top:0;width:var(--index-w,25px);height:var(--index-h,25px);background:var(--ink);transform:translate3d(var(--index-x,9px),var(--index-y,9px),0);z-index:0;pointer-events:none}
+.index a{position:relative;z-index:1}
+.index a[aria-current=true]{background:transparent;color:inherit}
+@media(max-width:700px){
+.stage{height:max(640px,100svh)}
+.apps-page .app-geometry{height:36%}
+.apps-page .art-caption,.apps-page .frame-links,.research-caption{font-size:7px}
+.apps-page .frame-links{gap:10px}
+.research-caption{column-gap:8px}
+.endnote{gap:12px;font-size:8px}
+}
+.event-photo.photo-a{top:31%}
+@media(max-width:700px){.event-photo.photo-a{top:35%}.event-photo.photo-b{top:30%}}
+
+/* A light editorial closing card. */
+.endnote{height:clamp(200px,20vw,280px);min-height:200px;background:var(--paper);color:var(--ink);padding:32px 4vw;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:32px}
+.endnote-brand{font:800 34px/1 'Barlow Condensed',sans-serif;letter-spacing:-.06em}
+.endnote-message{margin:0;text-align:center;font:800 clamp(32px,5vw,80px)/.95 'Barlow Condensed',sans-serif;letter-spacing:-.025em;white-space:nowrap}
+.endnote-side{display:flex;flex-direction:column;align-items:flex-end;gap:20px;font:10px/1.4 monospace;white-space:nowrap}
+.endnote-top{display:grid;place-items:center;width:42px;height:42px;border:1px solid currentColor;border-radius:50%;font:22px/1 Arial,sans-serif;transition:background .2s,color .2s,transform .2s}
+.endnote-top:hover{background:var(--ink);color:var(--paper);transform:translateY(-3px)}
+.endnote-brand:hover{opacity:.65}
+@media(max-width:700px){
+.endnote{height:210px;grid-template-columns:1fr auto;gap:28px 20px;padding:28px 6vw}
+.endnote-brand{font-size:30px}
+.endnote-side{flex-direction:row;align-items:center;gap:18px;font-size:9px}
+.endnote-top{width:34px;height:34px;font-size:19px}
+.endnote-message{grid-column:1/-1;text-align:left;font-size:clamp(34px,8vw,56px)}
+}
+@media(prefers-reduced-motion:reduce){.endnote-top{transition:none}}
+.event-photo figcaption{font-size:clamp(18px,3.7vw,26px);line-height:1.1}
+@media(max-width:700px){.endnote-brand{grid-column:1;grid-row:1}.endnote-side{grid-column:2;grid-row:1}.endnote-message{grid-row:2}}
+
+/* Corner text and both continuation arrows share one visual language. */
+:root{--corner-font-size:11px}
+.sheet .eyebrow,.sheet .bottom>:first-child{font-size:var(--corner-font-size)}
+.one .bottom .scroll{align-items:center;gap:10px}
+.one .scroll svg{display:block;width:16px;height:16px;flex:none}
+.event-photo figcaption{text-align:right}
+.endnote{background:#151515;color:var(--paper)}
+.endnote-statement{display:flex;justify-content:center;align-items:center;gap:22px;min-width:0}
+.endnote .endnote-side,.endnote .endnote-side>span{font-size:var(--corner-font-size)}
+.endnote .endnote-top{width:auto;height:auto;padding:4px;border:0;border-radius:0;background:none;color:inherit;transform:none;transition:none}
+.endnote-top svg{display:block;width:clamp(30px,4vw,56px);height:clamp(30px,4vw,56px);transform:rotate(0deg);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+.endnote .endnote-top:hover{background:none;color:inherit;transform:none}
+.endnote-top:hover svg,.endnote-top:focus-visible svg{transform:rotate(-180deg)}
+@media(max-width:700px){
+.endnote-statement{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:14px}
+.endnote-message{font-size:clamp(30px,7.5vw,52px)}
+.endnote .endnote-side{grid-column:2;grid-row:1}
+}
+@media(prefers-reduced-motion:reduce){.endnote-top svg{transition:none}}
+
+/* Match each arrow's weight and cap height to the adjoining type. */
+.one .bottom .scroll{align-items:baseline;gap:.65em}
+.one .scroll svg{display:inline-block;width:.65em;height:.75em;flex:none;overflow:visible}
+.endnote-statement{font:800 clamp(32px,5vw,80px)/1 'Barlow Condensed',sans-serif;align-items:baseline;gap:.24em}
+.endnote-message{font:inherit;letter-spacing:-.025em;line-height:1}
+.endnote .endnote-top{display:inline-flex;align-self:baseline;flex:none;padding:0;font:inherit;line-height:1}
+.endnote-top svg{display:block;width:.63em;height:.72em;overflow:visible}
+@media(max-width:700px){.endnote-statement{font-size:clamp(30px,7.5vw,52px)}}
+
+/* Calling card caption sizes. */
+.one .business-card .card-identity p,.one .business-card .card-links a{font-size:var(--corner-font-size)}
+.one .business-card .card-identity p{white-space:nowrap}
+
+/* Exact Expanded Regular named instance from the supplied SF Pro variable font. */
+@font-face{font-family:'SF Pro Expanded Badge';src:url('assets/homepage/fonts/sf-pro-expanded-regular-badge.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
+.event-badge,.event-badge strong,.event-badge text,.event-badge .badge-apple{font-family:'SF Pro Expanded Badge',sans-serif;font-weight:400;font-style:normal;font-synthesis:none}
+
+/* Badge uses SF Pro Medium named instances at the requested widths. */
+@font-face{font-family:'SF Pro Expanded Badge';src:url('assets/homepage/fonts/sf-pro-expanded-medium-badge.woff') format('woff');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:'SF Pro Condensed Badge';src:url('assets/homepage/fonts/sf-pro-condensed-medium-badge.woff') format('woff');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:'SF Pro Badge';src:url('assets/homepage/fonts/sf-pro-medium-badge.woff') format('woff');font-style:normal;font-weight:500;font-display:swap}
+.event-badge .badge-top strong{font-family:'SF Pro Expanded Badge',sans-serif;font-weight:500}
+.event-badge .badge-lettering text:nth-of-type(1){font-family:'SF Pro Condensed Badge',sans-serif;font-weight:500}
+.event-badge .badge-lettering text:nth-of-type(2){font-family:'SF Pro Badge',sans-serif;font-weight:500}
+.event-badge .badge-lettering text:nth-of-type(3){font-family:'SF Pro Expanded Badge',sans-serif;font-weight:500}
+</style></head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+<a class="skip-link" href="#cover">Skip to content</a>
+<main id="main-content"><div class="stage">
+<section class="sheet one" id="cover" aria-label="About Yu Yan"><div class="sheet-inner">
+<div class="eyebrow"><span>HELLO</span><span>I AM YU YAN</span></div>
+<h1 class="condensed">BE YOU.<span>BE BOUNDLESS.</span></h1>
 
-  <header class="site-header">
-    <div class="nav-shell">
-      <a class="wordmark" href="#top" aria-label="Yu Yan, back to top">YY<span>.</span></a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#top">About</a>
-        <a href="#pixelbeader">Pixel Beader</a>
-        <a href="#shredly">Shredly</a>
-      </nav>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
-        <span class="theme-toggle-mark" aria-hidden="true"></span>
-      </button>
-    </div>
-  </header>
+<div class="art-one clip business-card"><span class="tape"></span><svg class="card-orbit" viewBox="0 0 240 300" aria-label="Interlocking orbital lines" role="img"><g fill="none" stroke="#f1eee7" stroke-width="1.7"><ellipse cx="120" cy="150" rx="99" ry="112"/><ellipse cx="120" cy="150" rx="85" ry="112"/><ellipse cx="120" cy="150" rx="70" ry="112"/><ellipse cx="120" cy="150" rx="55" ry="112"/><ellipse cx="120" cy="150" rx="40" ry="112"/><ellipse cx="120" cy="150" rx="24" ry="112"/><ellipse cx="120" cy="150" rx="9" ry="112"/><ellipse cx="120" cy="150" rx="112" ry="90"/><ellipse cx="120" cy="150" rx="112" ry="65"/><ellipse cx="120" cy="150" rx="112" ry="35"/></g></svg><div class="card-identity"><strong>YU YAN</strong><span lang="zh">严禹</span><p>@ Southeast University</p></div><div class="card-links"><a href="mailto:mail2yuyan@gmail.com" aria-label="Email Yu Yan"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="1.8" fill="currentColor"/><g fill="none" stroke="var(--blue)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="m4.5 7 7.5 5 7.5-5"/></g></svg><span>Email</span></a><a href="https://www.linkedin.com/in/yu-yan-a00585405" target="_blank" rel="noopener" aria-label="Yu Yan on LinkedIn"><svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"/></svg><span>LinkedIn</span></a></div></div>
+<div class="hero-portrait clip"><span class="tape"></span><img src="assets/homepage/portrait-square.jpg" alt="Yu Yan at the Golden Gate Bridge" width="1600" height="1600" fetchpriority="high"></div>
+<a class="sticker round-sticker messi-link" href="https://www.instagram.com/leomessi/" target="_blank" rel="noopener" aria-label="Leo Messi on Instagram" title="@leomessi on Instagram"><img src="assets/homepage/messi-mark.svg" alt="Messi logo" width="88" height="77"></a>
+<div class="bottom"><a class="scroll" href="#wwdc">TO BE CONTINUED <svg viewBox="0 0 28 32" fill="currentColor" aria-hidden="true"><path d="M12.5 0h3v25l9-9 3 3L14 32 .5 19l3-3 9 9V0Z"/></svg></a><span class="number">01</span></div>
+</div></section>
+<section class="sheet two event-page" id="wwdc" aria-label="WWDC26"><div class="sheet-inner">
+<div class="eyebrow"><span>EXPLORE</span><span>STUDENT</span></div>
+<h2 class="condensed section-title">WWDC26.</h2>
 
-  <main id="main-content">
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow">Yu Yan · Independent developer</p>
-        <h1>Be you.<br><em>Be boundless.</em></h1>
-        <p class="hero-intro">
-          I believe technology should respect our attention, invite discovery, and leave room for life beyond the screen.
-        </p>
-        <div class="hero-actions" aria-label="Contact and profile links">
-          <a class="social-icon" href="mailto:mail2yuyan@gmail.com" aria-label="Email Yu Yan" title="Email">
-            <svg class="email-icon" viewBox="0 0 24 24" width="40" height="40" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="2" fill="currentColor"/><g fill="none" stroke="var(--paper)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="1"/><path d="m4.5 7 7.5 5 7.5-5"/></g></svg>
-          </a>
-          <a class="social-icon" href="https://www.linkedin.com/in/yu-yan-a00585405" target="_blank" rel="noopener" aria-label="Yu Yan on LinkedIn" title="LinkedIn">
-            <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"/></svg>
-          </a>
-        </div>
-      </div>
+<figure class="event-photo photo-a clip"><span class="tape"></span><img src="assets/homepage/wwdc26-1.jpg" alt="A personal photo from WWDC26" width="1500" height="2000"><figcaption>Tim Cook</figcaption></figure>
+<figure class="event-photo photo-b clip"><span class="tape"></span><img src="assets/homepage/wwdc26-2.jpg" alt="A second personal photo from WWDC26" width="1500" height="2000"><figcaption>John Ternus</figcaption></figure>
+<a class="event-badge clip" href="https://developer.apple.com/swift-student-challenge/" target="_blank" rel="noopener" aria-label="Yu — 2026 Distinguished Winner, WWDC26; visit Swift Student Challenge"><div class="badge-top"><strong>Yu</strong><svg class="badge-winner" viewBox="0 3 200 15" role="img" aria-label="2026 Distinguished Winner"><text x="0" y="15" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="currentColor" textLength="200" lengthAdjust="spacingAndGlyphs">2026 Distinguished Winner</text></svg></div><div class="badge-bottom"><svg class="badge-lettering" viewBox="0 0 120 174" role="img" aria-label="WWDC26"><g fill="currentColor" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="76"><text x="0" y="56" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">VVV</text><text x="0" y="113" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">DC</text><text x="0" y="170" textLength="116" lengthAdjust="spacingAndGlyphs" letter-spacing="-5">26</text></g></svg><span class="badge-apple" aria-label="Apple"></span></div></a>
+<div class="bottom"><span class="chapter">A MOMENT THAT STAYS.</span><span class="number">02</span></div>
+</div></section>
+<section class="sheet three apps-page" id="apps" aria-label="Apps"><div class="sheet-inner"><div class="eyebrow"><span>CREATE</span><span>DEVELOPER</span></div><h2 class="condensed section-title">MADE.<br>BY ME.</h2>
+<div class="art-two clip app-geometry geometry-pixel"><span class="tape"></span><div class="graphic"><img class="swift-ripple-art" src="assets/homepage/swift-ripple-fullbleed.png" alt="Swift bird woven into cream concentric rings on a charcoal print"></div><div class="art-caption"><span>PIXEL BEADER</span><span>FEB 2026</span><div class="frame-links"><a href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener">Explore ↗</a><a href="https://apps.apple.com/us/app/pixel-beader/id6780332489" target="_blank" rel="noopener">App Store ↗</a></div></div></div>
+<div class="art-three clip app-geometry geometry-shred"><span class="tape"></span><div class="checker"><img class="crossed-sticks-art" src="assets/homepage/crossed-sticks-regenerated.png" alt="Three crossed rounded sticks woven into a charcoal and cream checkerboard print"></div><div class="art-caption"><span>SHREDLY</span><span>SEP 2026</span><div class="frame-links"><a href="https://missouryy.github.io/shredly-site/" target="_blank" rel="noopener">Explore ↗</a></div></div></div>
+<a class="app-stamp stamp-pixel" href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener" aria-label="Explore Pixel Beader"><img src="assets/homepage/pixel-beader-app-icon-256.png" alt="Pixel Beader icon"></a>
+<a class="app-stamp stamp-shred" href="https://missouryy.github.io/shredly-site/" target="_blank" rel="noopener" aria-label="Explore Shredly"><img src="assets/homepage/shredly-app-icon-256.png" alt="Shredly icon"></a>
+<div class="bottom"><span class="chapter">IDEAS FOR EVERYDAY LIFE.</span><span class="number">03</span></div></div></section>
+<section class="sheet four experience-page" id="experience" aria-label="Internship experience"><div class="sheet-inner"><div class="eyebrow"><span>DISCOVER</span><span>RESEARCHER</span></div><h2 class="condensed section-title">LEARNING.<br>BUILDING.</h2>
+<div class="research-collage">
+<figure class="research-frame clip magnus-frame"><span class="tape" aria-hidden="true"></span><a class="research-image" href="https://www.iflytek.com/" target="_blank" rel="noopener" aria-label="Visit iFLYTEK"><img src="assets/homepage/iflytek-alpha-print.png" alt="iFLYTEK alpha emblem woven into a charcoal and cream engraved sound-wave print"></a><figcaption class="research-caption"><span>iFLYTEK R&amp;D GROUP</span><time>JUL — SEP 2026</time><span>Assistant Research Algorithm Engineer</span><span aria-hidden="true"></span></figcaption><div class="app-label research-label"><strong>Magnus Weaver</strong></div></figure>
+<figure class="research-frame clip cairn-frame"><span class="tape" aria-hidden="true"></span><a class="research-image" href="https://aiia.seu.edu.cn/palm" target="_blank" rel="noopener" aria-label="Visit SEU PALM Lab"><img src="assets/homepage/palm-engraved-print.png" alt="PALM Lab tree emblem in a cream and charcoal engraved print"></a><figcaption class="research-caption"><span>SEU PALM LAB</span><time>MAR — JUN 2026</time><span>Undergraduate Intern</span><span>Advisor: Prof. Linan Yue</span></figcaption><div class="app-label research-label"><strong>Cairn</strong></div></figure>
+</div>
+<div class="bottom"><a href="mailto:mail2yuyan@gmail.com">EXPERIENCES AT WORK.</a><span class="number">04</span></div></div></section>
+</div></main>
+<footer class="endnote"><a class="endnote-brand" href="#cover" aria-label="Yu Yan, back to top">YY.</a><div class="endnote-statement"><p class="endnote-message">TO BE CONTINUED</p><a class="endnote-top" href="#cover" aria-label="Back to top"><svg viewBox="0 0 28 32" fill="currentColor" aria-hidden="true"><path d="M11 0h6v20l7-7 4 4-14 15L0 17l4-4 7 7V0Z"/></svg></a></div><div class="endnote-side"><span>© 2026 Yu Yan</span></div></footer>
+<nav class="index" aria-label="Section index"><a href="#cover" aria-label="About Yu Yan" aria-current="true">01</a><a href="#wwdc" aria-label="WWDC26">02</a><a href="#apps" aria-label="Apps">03</a><a href="#experience" aria-label="Internship experience">04</a></nav>
+<script>
+// The staged layout owns fragment positioning; avoid native history restoration races.
+history.scrollRestoration='manual';
+const sheets=[...document.querySelectorAll('.sheet')],links=[...document.querySelectorAll('.index a')];
+const stage=document.querySelector('.stage'),track=document.querySelector('main');
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+const clamp=x=>Math.max(0,Math.min(1,x));
+const smooth=x=>x*x*(3-2*x);
+function blurAtRise(rise){
+ const join=.8,end=.88,maxBlur=6;
+ // Match the sine segment's value, velocity and acceleration to the tail.
+ const k=Math.PI*(end-join)/(4*join);
+ const joinBlur=maxBlur*k/(1+k);
+ if(rise<=join)return joinBlur+(maxBlur-joinBlur)*Math.sin((1-clamp(rise/join))*Math.PI*.5);
+ if(rise>=end)return 0;
+ const t=(rise-join)/(end-join);
+ // Velocity decelerates smoothly; velocity and acceleration both end at zero.
+ return joinBlur*(1-t)**3*(1+t);
+}
+const sectionIndex=document.querySelector('.index');
+let indexBoxes=[];
+let panelHeight=0,hold=0,stride=0,maxScroll=0,ticking=false,current=-1;
+function measure(){
+ panelHeight=stage.getBoundingClientRect().height;
+ hold=Math.max(140,Math.min(260,innerHeight*.24));
+ stride=panelHeight+hold;
+ track.style.height=(sheets.length*panelHeight+(sheets.length-1)*hold)+'px';
+ indexBoxes=links.map(a=>({x:a.offsetLeft,y:a.offsetTop,w:a.offsetWidth,h:a.offsetHeight}));
+ maxScroll=document.documentElement.scrollHeight-innerHeight;
+ update();
+}
+function update(){
+ const y=scrollY;
 
-      <div class="hero-portrait">
-        <div class="portrait-frame">
-          <img src="portrait-square.jpg" alt="Yu Yan at the Golden Gate Bridge" width="1600" height="1600">
-        </div>
-        <div class="portrait-nameplate person-name" aria-label="Yu Yan  ·  严 禹">
-          <span class="name-latin">Yu Yan</span>
-          <span class="name-dot" aria-hidden="true">·</span>
-          <span class="name-han" lang="zh">严 禹</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="section-intro">
-        <p class="section-kicker">Selected work</p>
-        <h2>Apps I’ve made.</h2>
-      </div>
-
-      <div class="work-list">
-        <article class="work-card" id="pixelbeader">
-          <div class="work-number">01</div>
-          <div class="work-content">
-            <div class="work-meta">
-              <span>Creativity &amp; bead art</span>
-              <time datetime="2026-02">Feb 2026</time>
-            </div>
-            <h3>Pixel Beader</h3>
-            <p class="work-lede">An on-device spatial bead-art editor with precise touch tools and real-time 3D rendering.</p>
-            <p class="work-detail">Built in SwiftUI and SceneKit with Apple Pencil interaction, compact grid storage, transactional undo, color quantization, and procedural materials.</p>
-            <div class="work-footer">
-              <a class="winner-badge-link" href="https://developer.apple.com/swift-student-challenge/" target="_blank" rel="noopener" aria-label="Swift Student Challenge — Distinguished Winner"><div class="winner-badge" aria-hidden="true"></div></a>
-              <div class="project-actions">
-                <a class="app-store-link" href="https://apps.apple.com/us/app/pixel-beader/id6780332489" target="_blank" rel="noopener" aria-label="Download Pixel Beader on the App Store"><img src="app-store-badge.svg" alt="Download on the App Store" width="120" height="40"></a>
-                <a class="project-icon-link" href="https://missouryy.github.io/pixel-beader-site/" target="_blank" rel="noopener" aria-label="Visit the Pixel Beader website" title="Visit Pixel Beader"><img src="pixel-beader-app-icon-256.png" data-light-src="pixel-beader-app-icon-256.png" data-dark-src="pixel-beader-app-icon-dark-256.png" alt="" width="64" height="64" loading="lazy"></a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card" id="shredly">
-          <div class="work-number">02</div>
-          <div class="work-content">
-            <div class="work-meta">
-              <span>Reading &amp; focus</span>
-              <time datetime="2026-09">Sep 2026</time>
-            </div>
-            <h3>Shredly</h3>
-            <p class="work-lede">A reading app that turns pages into progress.</p>
-            <p class="work-detail">Bring documents into one quiet space, watch completed words shred away, and build a reading rhythm with daily goals and an activity calendar.</p>
-            <div class="work-footer">
-              <div class="project-actions">
-                <a class="project-icon-link" href="https://missouryy.github.io/shredly-site/" target="_blank" rel="noopener" aria-label="Visit the Shredly website" title="Visit Shredly"><img src="shredly-app-icon-256.png" data-light-src="shredly-app-icon-256.png" data-dark-src="shredly-app-icon-dark-256.png" alt="" width="64" height="64" loading="lazy"></a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-meta">
-      <p>© <span id="year">2026</span> Yu Yan</p>
-    </div>
-  </footer>
-</body>
-</html>
+ let active=0;
+ sheets.forEach((el,i)=>{
+  const start=i*stride;
+  const near=i===0?0:clamp((start-y)/panelHeight);
+  const outgoing=clamp((y-start-hold)/panelHeight);
+  const top=panelHeight*(1-Math.cos(Math.PI*.5*near));
+  const scale=1+smooth(near)*.38-smooth(outgoing)*.035;
+  const visible=(i===0||y>start-panelHeight)&&(i===sheets.length-1||y<(i+1)*stride);
+  el.style.visibility=visible?'visible':'hidden';
+  el.style.pointerEvents=visible&&near<.002&&outgoing<.002?'auto':'none';
+  el.style.transform=reduceMotion.matches?`translate3d(0,${near>0?panelHeight:0}px,0)`:`translate3d(0,${top}px,0) scale(${scale})`;
+  // Blur only the artwork, keeping the poster edge and its compositor stable.
+  // Accelerate focus until 80%, then smoothly settle through 88% of visual rise.
+  const blur=blurAtRise(clamp(1-top/panelHeight));
+  el.firstElementChild.style.filter=reduceMotion.matches||blur===0?'none':`blur(${blur}px)`;
+  if(y>=start-panelHeight*.42)active=i;
+ });
+ // Follow the entire sheet transition, including the stable hold between pages.
+ let indexPosition=0;
+ for(let i=0;i<sheets.length-1;i++)indexPosition+=clamp((y-i*stride-hold)/panelHeight);
+ const from=Math.min(links.length-1,Math.floor(indexPosition)),to=Math.min(links.length-1,from+1),mix=indexPosition-from;
+ const a=indexBoxes[from],b=indexBoxes[to];
+ if(a&&b){
+  sectionIndex.style.setProperty('--index-x',(a.x+(b.x-a.x)*mix)+'px');
+  sectionIndex.style.setProperty('--index-y',(a.y+(b.y-a.y)*mix)+'px');
+  sectionIndex.style.setProperty('--index-w',a.w+'px');
+  sectionIndex.style.setProperty('--index-h',a.h+'px');
+ }
+ links.forEach((link,i)=>{const weight=clamp(1-Math.abs(indexPosition-i));const tone=Math.round(41+(241-41)*weight);link.style.color=`rgb(${tone},${tone},${tone})`;});
+ if(active!==current){links.forEach((a,i)=>a.setAttribute('aria-current',String(i===active)));current=active;}
+ ticking=false;
+}
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});
+addEventListener('resize',measure);reduceMotion.addEventListener('change',update);
+function goToPanel(hash,instant=false){
+ const i=sheets.findIndex(el=>'#'+el.id===hash);
+ if(i<0)return;
+ history.replaceState(null,'',hash);
+ scrollTo({top:i*stride,behavior:instant||reduceMotion.matches?'instant':'smooth'});
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();goToPanel(a.getAttribute('href'))}));
+document.querySelectorAll('.back').forEach(el=>el.addEventListener('click',()=>goToPanel('#cover')));
+// Each fresh entry starts at the cover, including old section fragments and bfcache restores.
+function resetEntry(){
+ history.replaceState(null,'',location.pathname+location.search);
+ measure();
+ scrollTo({top:0,left:0,behavior:'instant'});
+ update();
+}
+resetEntry();
+addEventListener('pageshow',()=>{
+ resetEntry();
+ requestAnimationFrame(()=>{scrollTo({top:0,left:0,behavior:'instant'});update();});
+});
+</script>
+</body></html>

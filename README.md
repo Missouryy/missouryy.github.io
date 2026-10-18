@@ -1,12 +1,7 @@
-# Yu Yan (严禹) — Personal Homepage
+# Yu Yan — Personal Website
 
-Personal homepage of Yu Yan (严禹), B.Eng. candidate in Artificial Intelligence at Southeast University.
+Live site: https://missouryy.github.io/
 
-## Hosted URL
-[https://missouryy.github.io/](https://missouryy.github.io/)
+Static HTML, CSS, JavaScript, and assets. GitHub Pages publishes the repository root from the `main` branch. `.nojekyll` disables Jekyll processing.
 
-## Overview
-- Personal introduction, Pixel Beader, and Shredly
-- Clean layout & high-legibility typography
-- Minimal HTML5, CSS3, and JavaScript
-- Responsive design with Light / Dark Mode support
+To preview locally, run `python3 -m http.server 8000` from this directory.
