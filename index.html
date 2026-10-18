@@ -379,62 +379,67 @@ function blurAtRise(rise){
 const sectionIndex=document.querySelector('.index');
 let indexBoxes=[];
 let panelHeight=0,hold=0,stride=0,maxScroll=0,ticking=false,current=-1;
-// Delay the loose collage pieces, preserving each sheet's original motion.
+// Scroll only triggers a layer's entrance/exit; the browser plays it in time.
 const collageSelector='.business-card,.hero-portrait,.messi-link,.event-photo,.event-badge,.app-geometry,.app-stamp,.research-frame';
-const collageLayers=sheets.map(sheet=>[...sheet.querySelectorAll(collageSelector)].map(el=>({el,delay:0,x:0,y:0})));
-const maxLayerDelay=240;
-let motionSamples=[],motionReset=true;
+const collageLayers=sheets.map(sheet=>[...sheet.querySelectorAll(collageSelector)].map(el=>({el,rank:0,shown:null,animation:null})));
+let motionReset=true,lastTriggerScroll=0,scrollDirection=0;
 function measureCollage(){
- collageLayers.forEach((layers,i)=>{
-  // CSS stacking order changes on mobile (the calling card comes forward).
+ collageLayers.forEach(layers=>{
+  // Resolve actual stacking order again when the mobile layout changes.
   layers.sort((a,b)=>(parseInt(getComputedStyle(a.el).zIndex)||0)-(parseInt(getComputedStyle(b.el).zIndex)||0));
-  layers.forEach((layer,rank)=>{
-   layer.delay=80+rank*45;
-   let x=layer.el.offsetWidth/2,y=layer.el.offsetHeight/2;
-   for(let node=layer.el;node&&node!==sheets[i];node=node.offsetParent){x+=node.offsetLeft;y+=node.offsetTop;}
-   layer.x=x-sheets[i].clientWidth/2;layer.y=y;
-  });
+  layers.forEach((layer,rank)=>{layer.rank=rank;});
  });
- motionReset=true;
 }
-function delayedScroll(time){
- if(time<=motionSamples[0].time)return motionSamples[0].y;
- for(let i=1;i<motionSamples.length;i++){
-  const a=motionSamples[i-1],b=motionSamples[i];
-  if(time<=b.time)return a.y+(b.y-a.y)*(time-a.time)/(b.time-a.time);
+function playCollage(layer,show,count,animate){
+ const el=layer.el;
+ const current=getComputedStyle(el);
+ const from={translate:current.translate,scale:current.scale,opacity:current.opacity};
+ if(layer.animation)layer.animation.cancel();
+ layer.animation=null;layer.shown=show;
+ const offset=Math.min(96,panelHeight*.12);
+ const to=show?{translate:'0px 0px',scale:'1',opacity:1}:{translate:`0px ${offset}px`,scale:'1.035',opacity:0};
+ el.style.translate=show?'none':to.translate;
+ el.style.scale=show?'none':to.scale;
+ el.style.opacity=show?'':String(to.opacity);
+ el.style.pointerEvents=show&&!animate?'':'none';
+ el.inert=!(show&&!animate);
+ el.style.willChange=animate?'translate, scale, opacity':'auto';
+ if(!animate)return;
+ const animation=el.animate([from,to],{
+  duration:show?360:240,
+  // Enter back-to-front; withdraw front-to-back before the sheet drops.
+  delay:show?80+layer.rank*45:(count-1-layer.rank)*35,
+  easing:show?'cubic-bezier(.22,1,.36,1)':'cubic-bezier(.4,0,1,1)',
+  fill:'backwards'
+ });
+ layer.animation=animation;
+ animation.onfinish=()=>{
+  if(layer.animation!==animation)return;
+  layer.animation=null;el.style.willChange='auto';
+  el.style.pointerEvents=layer.shown?'':'none';el.inert=!layer.shown;
+ };
+}
+function updateCollage(y){
+ const reset=motionReset||reduceMotion.matches;
+ if(reset){lastTriggerScroll=y;scrollDirection=0;motionReset=false;}
+ else if(Math.abs(y-lastTriggerScroll)>=6){
+  scrollDirection=Math.sign(y-lastTriggerScroll);lastTriggerScroll=y;
  }
- return motionSamples[motionSamples.length-1].y;
-}
-function collagePose(y,i){
- const start=i*stride,near=i===0?0:clamp((start-y)/panelHeight);
- const outgoing=clamp((y-start-hold)/panelHeight);
- return {top:panelHeight*(1-Math.cos(Math.PI*.5*near)),scale:1+smooth(near)*.38-smooth(outgoing)*.035};
-}
-function updateCollage(y,now){
- if(motionReset||reduceMotion.matches){motionSamples=[{time:now-maxLayerDelay-1,y}];motionReset=false;}
- // Preserve a stationary plateau when a fresh gesture starts after idle.
- const last=motionSamples[motionSamples.length-1];
- if(now-last.time>48)motionSamples.push({time:now-16,y:last.y});
- motionSamples.push({time:now,y});
- while(motionSamples.length>2&&motionSamples[1].time<now-maxLayerDelay)motionSamples.shift();
- let moving=false;
  collageLayers.forEach((layers,i)=>{
-  const parent=collagePose(y,i),visible=sheets[i].style.visibility==='visible';
+  const start=i*stride;
+  const enterAt=start-panelHeight*.55;
+  const exitAt=start-panelHeight*.025;
+  const visible=sheets[i].style.visibility==='visible';
   layers.forEach(layer=>{
-   const delayedY=reduceMotion.matches?y:delayedScroll(now-layer.delay);
-   const pose=collagePose(delayedY,i),ratio=pose.scale/parent.scale;
-   // Compensate relative to the sheet's scale origin; CSS transform keeps the
-   // existing rotation and hover effect, while translate/scale carry the lag.
-   const x=(ratio-1)*layer.x,dy=(pose.top-parent.top)/parent.scale+(ratio-1)*layer.y;
-   const settled=!visible||reduceMotion.matches||(Math.abs(x)<.01&&Math.abs(dy)<.01&&Math.abs(ratio-1)<.00001);
-   layer.el.style.translate=settled?'none':`${x}px ${dy}px`;
-   layer.el.style.scale=settled?'none':String(ratio);
-   layer.el.style.willChange=settled?'auto':'translate, scale';
-   layer.el.style.pointerEvents=settled?'':'none';
-   if(visible&&Math.abs(delayedY-y)>.01)moving=true;
+   if(reset||layer.shown===null){
+    playCollage(layer,reduceMotion.matches||i===0||y>=enterAt,layers.length,false);
+   }else if(i>0&&scrollDirection>0&&y>=enterAt&&!layer.shown){
+    playCollage(layer,true,layers.length,visible);
+   }else if(i>0&&scrollDirection<0&&y<=exitAt&&layer.shown){
+    playCollage(layer,false,layers.length,visible);
+   }
   });
  });
- return moving;
 }
 function measure(){
  panelHeight=stage.getBoundingClientRect().height;
@@ -446,7 +451,7 @@ function measure(){
  measureCollage();
  update();
 }
-function update(now=performance.now()){
+function update(){
  const y=scrollY;
 
  let active=0;
@@ -479,9 +484,8 @@ function update(now=performance.now()){
  }
  links.forEach((link,i)=>{const weight=clamp(1-Math.abs(indexPosition-i));const tone=Math.round(41+(241-41)*weight);link.style.color=`rgb(${tone},${tone},${tone})`;});
  if(active!==current){links.forEach((a,i)=>a.setAttribute('aria-current',String(i===active)));current=active;}
- const layersMoving=updateCollage(y,now);
- ticking=layersMoving;
- if(layersMoving)requestAnimationFrame(update);
+ updateCollage(y);
+ ticking=false;
 }
 addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});
 addEventListener('resize',measure);reduceMotion.addEventListener('change',()=>{motionReset=true;update();});
