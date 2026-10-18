@@ -320,6 +320,12 @@ html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100sv
 .event-badge .badge-lettering text:nth-of-type(3){font-family:'SF Pro Expanded Badge',sans-serif;font-weight:500}
 .endnote-brand{display:inline-flex;align-items:center}
 .endnote-brand svg{display:block;width:auto;height:1em}
+/* Keep one outer silhouette at desktop and narrow-screen radii. */
+.event-badge{background:#2a303b;overflow:hidden}
+.event-badge .badge-top{background:#ede9e9}
+.event-badge .badge-bottom{border-radius:0}
+.event-badge .badge-top strong{font-size:clamp(16px,2.25vw,34px)}
+@media(max-width:700px){.event-badge .badge-top strong{font-size:20px}}
 </style></head>
 <body>
 <a class="skip-link" href="#cover">Skip to content</a>
@@ -379,65 +385,38 @@ function blurAtRise(rise){
 const sectionIndex=document.querySelector('.index');
 let indexBoxes=[];
 let panelHeight=0,hold=0,stride=0,maxScroll=0,ticking=false,current=-1;
-// Scroll only triggers a layer's entrance/exit; the browser plays it in time.
+// Each loose piece has its own scroll range: later in, earlier out on reverse.
 const collageSelector='.business-card,.hero-portrait,.messi-link,.event-photo,.event-badge,.app-geometry,.app-stamp,.research-frame';
-const collageLayers=sheets.map(sheet=>[...sheet.querySelectorAll(collageSelector)].map(el=>({el,rank:0,shown:null,animation:null})));
-let motionReset=true,lastTriggerScroll=0,scrollDirection=0;
+const collageLayers=sheets.map(sheet=>[...sheet.querySelectorAll(collageSelector)].map(el=>({el,offset:0,x:0,y:0})));
 function measureCollage(){
- collageLayers.forEach(layers=>{
-  // Resolve actual stacking order again when the mobile layout changes.
+ collageLayers.forEach((layers,i)=>{
   layers.sort((a,b)=>(parseInt(getComputedStyle(a.el).zIndex)||0)-(parseInt(getComputedStyle(b.el).zIndex)||0));
-  layers.forEach((layer,rank)=>{layer.rank=rank;});
+  layers.forEach((layer,rank)=>{
+   layer.offset=panelHeight*Math.min(.32,.12+rank*.05);
+   let x=layer.el.offsetWidth/2,y=layer.el.offsetHeight/2;
+   for(let node=layer.el;node&&node!==sheets[i];node=node.offsetParent){x+=node.offsetLeft;y+=node.offsetTop;}
+   layer.x=x-sheets[i].clientWidth/2;layer.y=y;
+  });
  });
 }
-function playCollage(layer,show,count,animate){
- const el=layer.el;
- const current=getComputedStyle(el);
- const from={translate:current.translate,scale:current.scale,opacity:current.opacity};
- if(layer.animation)layer.animation.cancel();
- layer.animation=null;layer.shown=show;
- const offset=Math.min(96,panelHeight*.12);
- const to=show?{translate:'0px 0px',scale:'1',opacity:1}:{translate:`0px ${offset}px`,scale:'1.035',opacity:0};
- el.style.translate=show?'none':to.translate;
- el.style.scale=show?'none':to.scale;
- el.style.opacity=show?'':String(to.opacity);
- el.style.pointerEvents=show&&!animate?'':'none';
- el.inert=!(show&&!animate);
- el.style.willChange=animate?'translate, scale, opacity':'auto';
- if(!animate)return;
- const animation=el.animate([from,to],{
-  duration:show?360:240,
-  // Enter back-to-front; withdraw front-to-back before the sheet drops.
-  delay:show?80+layer.rank*45:(count-1-layer.rank)*35,
-  easing:show?'cubic-bezier(.22,1,.36,1)':'cubic-bezier(.4,0,1,1)',
-  fill:'backwards'
- });
- layer.animation=animation;
- animation.onfinish=()=>{
-  if(layer.animation!==animation)return;
-  layer.animation=null;el.style.willChange='auto';
-  el.style.pointerEvents=layer.shown?'':'none';el.inert=!layer.shown;
- };
+function collagePose(y,i,offset=0){
+ const start=i*stride,range=panelHeight-offset;
+ const near=i===0?0:clamp((start-y)/range);
+ const outgoing=clamp((y-start-hold-offset)/range);
+ return {top:panelHeight*(1-Math.cos(Math.PI*.5*near)),scale:1+smooth(near)*.38-smooth(outgoing)*.035};
 }
 function updateCollage(y){
- const reset=motionReset||reduceMotion.matches;
- if(reset){lastTriggerScroll=y;scrollDirection=0;motionReset=false;}
- else if(Math.abs(y-lastTriggerScroll)>=6){
-  scrollDirection=Math.sign(y-lastTriggerScroll);lastTriggerScroll=y;
- }
  collageLayers.forEach((layers,i)=>{
-  const start=i*stride;
-  const enterAt=start-panelHeight*.55;
-  const exitAt=start-panelHeight*.025;
-  const visible=sheets[i].style.visibility==='visible';
+  const parent=collagePose(y,i),visible=sheets[i].style.visibility==='visible';
   layers.forEach(layer=>{
-   if(reset||layer.shown===null){
-    playCollage(layer,reduceMotion.matches||i===0||y>=enterAt,layers.length,false);
-   }else if(i>0&&scrollDirection>0&&y>=enterAt&&!layer.shown){
-    playCollage(layer,true,layers.length,visible);
-   }else if(i>0&&scrollDirection<0&&y<=exitAt&&layer.shown){
-    playCollage(layer,false,layers.length,visible);
-   }
+   const pose=collagePose(y,i,layer.offset),ratio=pose.scale/parent.scale;
+   // Individual translate/scale preserve the original rotation and hover transform.
+   const x=(ratio-1)*layer.x,dy=(pose.top-parent.top)/parent.scale+(ratio-1)*layer.y;
+   const settled=!visible||reduceMotion.matches||(Math.abs(x)<.01&&Math.abs(dy)<.01&&Math.abs(ratio-1)<.00001);
+   layer.el.style.translate=settled?'none':`${x}px ${dy}px`;
+   layer.el.style.scale=settled?'none':String(ratio);
+   layer.el.style.willChange=settled?'auto':'translate, scale';
+   layer.el.style.pointerEvents=settled?'':'none';layer.el.inert=!settled;
   });
  });
 }
@@ -488,7 +467,7 @@ function update(){
  ticking=false;
 }
 addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});
-addEventListener('resize',measure);reduceMotion.addEventListener('change',()=>{motionReset=true;update();});
+addEventListener('resize',measure);reduceMotion.addEventListener('change',update);
 document.fonts.ready.then(measure);
 function goToPanel(hash,instant=false){
  const i=sheets.findIndex(el=>'#'+el.id===hash);
@@ -500,11 +479,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 document.querySelectorAll('.back').forEach(el=>el.addEventListener('click',()=>goToPanel('#cover')));
 // Each fresh entry starts at the cover, including old section fragments and bfcache restores.
 function resetEntry(){
- motionReset=true;
  history.replaceState(null,'',location.pathname+location.search);
  measure();
  scrollTo({top:0,left:0,behavior:'instant'});
- motionReset=true;
  update();
 }
 resetEntry();
