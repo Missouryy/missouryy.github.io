@@ -172,7 +172,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
 /* Edge-to-edge artwork and a lighter second portrait. */
 .geometry-shred .checker:after{content:none}
-.geometry-shred .checker .crossed-sticks-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.geometry-shred .checker .crossed-sticks-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transform:scale(.8);transform-origin:center}
 .event-photo.photo-b{width:21.5%;left:67%;top:24%}
 .event-badge{left:25%}
 @media(max-width:700px){.event-photo.photo-b{width:30%;left:60%;top:36%}.event-badge{left:5%}}
@@ -255,8 +255,8 @@ html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100sv
 @media(max-width:700px){.event-photo.photo-a{top:35%}.event-photo.photo-b{top:30%}}
 
 /* A light editorial closing card. */
-.endnote{height:clamp(200px,20vw,280px);min-height:200px;background:var(--paper);color:var(--ink);padding:32px 4vw;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:32px}
-.endnote-brand{font:800 34px/1 'Barlow Condensed',sans-serif;letter-spacing:-.06em}
+.endnote{--footer-brand-size:34px;height:clamp(200px,20vw,280px);min-height:200px;background:var(--paper);color:var(--ink);padding:32px 4vw;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:32px}
+.endnote-brand{font:800 var(--footer-brand-size)/1 'Barlow Condensed',sans-serif;letter-spacing:-.06em}
 .endnote-message{margin:0;text-align:center;font:800 clamp(32px,5vw,80px)/.95 'Barlow Condensed',sans-serif;letter-spacing:-.025em;white-space:nowrap}
 .endnote-side{display:flex;flex-direction:column;align-items:flex-end;gap:20px;font:10px/1.4 monospace;white-space:nowrap}
 .endnote-top{display:grid;place-items:center;width:42px;height:42px;border:1px solid currentColor;border-radius:50%;font:22px/1 Arial,sans-serif;transition:background .2s,color .2s,transform .2s}
@@ -264,7 +264,7 @@ html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100sv
 .endnote-brand:hover{opacity:.65}
 @media(max-width:700px){
 .endnote{height:210px;grid-template-columns:1fr auto;gap:28px 20px;padding:28px 6vw}
-.endnote-brand{font-size:30px}
+.endnote{--footer-brand-size:30px}
 .endnote-side{flex-direction:row;align-items:center;gap:18px;font-size:9px}
 .endnote-top{width:34px;height:34px;font-size:19px}
 .endnote-message{grid-column:1/-1;text-align:left;font-size:clamp(34px,8vw,56px)}
@@ -281,7 +281,7 @@ html{scroll-padding-top:0}main{padding-top:0}.stage{top:0;height:max(650px,100sv
 .event-photo figcaption{text-align:right}
 .endnote{background:#151515;color:var(--paper)}
 .endnote-statement{display:flex;justify-content:center;align-items:center;gap:22px;min-width:0}
-.endnote .endnote-side,.endnote .endnote-side>span{font-size:var(--corner-font-size)}
+.endnote .endnote-side,.endnote .endnote-side>span{font:800 var(--footer-brand-size)/1 'Barlow Condensed',sans-serif}
 .endnote .endnote-top{width:auto;height:auto;padding:4px;border:0;border-radius:0;background:none;color:inherit;transform:none;transition:none}
 .endnote-top svg{display:block;width:clamp(30px,4vw,56px);height:clamp(30px,4vw,56px);transform:rotate(0deg);transition:transform .45s cubic-bezier(.22,1,.36,1)}
 .endnote .endnote-top:hover{background:none;color:inherit;transform:none}
