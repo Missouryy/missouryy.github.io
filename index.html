@@ -379,6 +379,63 @@ function blurAtRise(rise){
 const sectionIndex=document.querySelector('.index');
 let indexBoxes=[];
 let panelHeight=0,hold=0,stride=0,maxScroll=0,ticking=false,current=-1;
+// Delay the loose collage pieces, preserving each sheet's original motion.
+const collageSelector='.business-card,.hero-portrait,.messi-link,.event-photo,.event-badge,.app-geometry,.app-stamp,.research-frame';
+const collageLayers=sheets.map(sheet=>[...sheet.querySelectorAll(collageSelector)].map(el=>({el,delay:0,x:0,y:0})));
+const maxLayerDelay=240;
+let motionSamples=[],motionReset=true;
+function measureCollage(){
+ collageLayers.forEach((layers,i)=>{
+  // CSS stacking order changes on mobile (the calling card comes forward).
+  layers.sort((a,b)=>(parseInt(getComputedStyle(a.el).zIndex)||0)-(parseInt(getComputedStyle(b.el).zIndex)||0));
+  layers.forEach((layer,rank)=>{
+   layer.delay=80+rank*45;
+   let x=layer.el.offsetWidth/2,y=layer.el.offsetHeight/2;
+   for(let node=layer.el;node&&node!==sheets[i];node=node.offsetParent){x+=node.offsetLeft;y+=node.offsetTop;}
+   layer.x=x-sheets[i].clientWidth/2;layer.y=y;
+  });
+ });
+ motionReset=true;
+}
+function delayedScroll(time){
+ if(time<=motionSamples[0].time)return motionSamples[0].y;
+ for(let i=1;i<motionSamples.length;i++){
+  const a=motionSamples[i-1],b=motionSamples[i];
+  if(time<=b.time)return a.y+(b.y-a.y)*(time-a.time)/(b.time-a.time);
+ }
+ return motionSamples[motionSamples.length-1].y;
+}
+function collagePose(y,i){
+ const start=i*stride,near=i===0?0:clamp((start-y)/panelHeight);
+ const outgoing=clamp((y-start-hold)/panelHeight);
+ return {top:panelHeight*(1-Math.cos(Math.PI*.5*near)),scale:1+smooth(near)*.38-smooth(outgoing)*.035};
+}
+function updateCollage(y,now){
+ if(motionReset||reduceMotion.matches){motionSamples=[{time:now-maxLayerDelay-1,y}];motionReset=false;}
+ // Preserve a stationary plateau when a fresh gesture starts after idle.
+ const last=motionSamples[motionSamples.length-1];
+ if(now-last.time>48)motionSamples.push({time:now-16,y:last.y});
+ motionSamples.push({time:now,y});
+ while(motionSamples.length>2&&motionSamples[1].time<now-maxLayerDelay)motionSamples.shift();
+ let moving=false;
+ collageLayers.forEach((layers,i)=>{
+  const parent=collagePose(y,i),visible=sheets[i].style.visibility==='visible';
+  layers.forEach(layer=>{
+   const delayedY=reduceMotion.matches?y:delayedScroll(now-layer.delay);
+   const pose=collagePose(delayedY,i),ratio=pose.scale/parent.scale;
+   // Compensate relative to the sheet's scale origin; CSS transform keeps the
+   // existing rotation and hover effect, while translate/scale carry the lag.
+   const x=(ratio-1)*layer.x,dy=(pose.top-parent.top)/parent.scale+(ratio-1)*layer.y;
+   const settled=!visible||reduceMotion.matches||(Math.abs(x)<.01&&Math.abs(dy)<.01&&Math.abs(ratio-1)<.00001);
+   layer.el.style.translate=settled?'none':`${x}px ${dy}px`;
+   layer.el.style.scale=settled?'none':String(ratio);
+   layer.el.style.willChange=settled?'auto':'translate, scale';
+   layer.el.style.pointerEvents=settled?'':'none';
+   if(visible&&Math.abs(delayedY-y)>.01)moving=true;
+  });
+ });
+ return moving;
+}
 function measure(){
  panelHeight=stage.getBoundingClientRect().height;
  hold=Math.max(140,Math.min(260,innerHeight*.24));
@@ -386,9 +443,10 @@ function measure(){
  track.style.height=(sheets.length*panelHeight+(sheets.length-1)*hold)+'px';
  indexBoxes=links.map(a=>({x:a.offsetLeft,y:a.offsetTop,w:a.offsetWidth,h:a.offsetHeight}));
  maxScroll=document.documentElement.scrollHeight-innerHeight;
+ measureCollage();
  update();
 }
-function update(){
+function update(now=performance.now()){
  const y=scrollY;
 
  let active=0;
@@ -421,10 +479,13 @@ function update(){
  }
  links.forEach((link,i)=>{const weight=clamp(1-Math.abs(indexPosition-i));const tone=Math.round(41+(241-41)*weight);link.style.color=`rgb(${tone},${tone},${tone})`;});
  if(active!==current){links.forEach((a,i)=>a.setAttribute('aria-current',String(i===active)));current=active;}
- ticking=false;
+ const layersMoving=updateCollage(y,now);
+ ticking=layersMoving;
+ if(layersMoving)requestAnimationFrame(update);
 }
 addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true}},{passive:true});
-addEventListener('resize',measure);reduceMotion.addEventListener('change',update);
+addEventListener('resize',measure);reduceMotion.addEventListener('change',()=>{motionReset=true;update();});
+document.fonts.ready.then(measure);
 function goToPanel(hash,instant=false){
  const i=sheets.findIndex(el=>'#'+el.id===hash);
  if(i<0)return;
@@ -435,9 +496,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 document.querySelectorAll('.back').forEach(el=>el.addEventListener('click',()=>goToPanel('#cover')));
 // Each fresh entry starts at the cover, including old section fragments and bfcache restores.
 function resetEntry(){
+ motionReset=true;
  history.replaceState(null,'',location.pathname+location.search);
  measure();
  scrollTo({top:0,left:0,behavior:'instant'});
+ motionReset=true;
  update();
 }
 resetEntry();
