@@ -172,7 +172,9 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
 /* Edge-to-edge artwork and a lighter second portrait. */
 .geometry-shred .checker:after{content:none}
-.geometry-shred .checker .crossed-sticks-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transform:scale(.8);transform-origin:center}
+/* Scale the complete artwork before clipping at the photo window. */
+.geometry-shred .checker{container-type:size}
+.geometry-shred .checker .crossed-sticks-art{position:absolute;left:50%;top:50%;display:block;width:max(100cqw,133.333333cqh);height:auto;max-width:none;transform:translate(-50%,-50%) scale(.8);transform-origin:center}
 .event-photo.photo-b{width:21.5%;left:67%;top:24%}
 .event-badge{left:25%}
 @media(max-width:700px){.event-photo.photo-b{width:30%;left:60%;top:36%}.event-badge{left:5%}}
