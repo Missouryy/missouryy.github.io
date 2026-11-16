@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#147526">
+  <meta name="description" content="为羽毛球裁判与球友设计的单打、双打计分工具。">
+  <title>局点 · GamePoint | 羽毛球裁判计分器</title>
+  <style>
+* { box-sizing: border-box; }
+:root { color-scheme: light; --green: #147526; --ink: #18241b; --muted: #516055; --line: #d8e0d8; }
+body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+a { color: var(--green); text-underline-offset: .25em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+::selection { background: #d2eccf; color: var(--ink); }
+.wrap { width: min(100% - 40px, 960px); margin-inline: auto; }
+nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.brand { text-decoration: none; font-weight: 700; color: var(--ink); }
+.hero { background: var(--green); }
+.hero svg { display: block; width: min(100%, 960px); height: auto; margin-inline: auto; }
+main { padding-block: clamp(32px, 6vw, 64px); }
+h1, h2 { line-height: 1.25; text-wrap: balance; }
+h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 5vw, 3.25rem); }
+h2 { margin: 0 0 8px; font-size: 1.2rem; }
+p { margin: 0; max-width: 42em; }
+.lead { color: var(--muted); font-size: 1.1rem; }
+.features, .faq { margin-top: 36px; }
+.features section, .faq details { border-top: 1px solid var(--line); padding-block: 15px; }
+.features section { display: grid; grid-template-columns: minmax(9em, 1fr) 3fr; gap: 16px; align-items: baseline; }
+.features h2 { margin: 0; }
+summary { cursor: pointer; font-weight: 600; min-height: 28px; }
+details p { padding-block: 8px 0; }
+.contact { display: inline-flex; align-items: center; margin-block: 18px 10px; min-height: 44px; padding: 8px 15px; border-radius: 6px; color: white; background: var(--green); font-weight: 650; }
+footer { padding-block: 20px 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
+@media (max-width: 560px) { .features section { grid-template-columns: 1fr; gap: 5px; } }
+</style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="主导航">
+      <a class="brand" href="./">局点 · GamePoint</a>
+      <a href="./support.html">技术支持</a>
+    </nav>
+    <div class="hero"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="3840" height="1646" viewBox="0 0 3840 1646"><rect width="3840" height="1646" fill="#147526"/><g transform="translate(1920 823) scale(2.6) translate(-415.6 -113)"><g fill="currentColor" color="#FFFFFF">
+  <g id="game" transform="translate(0 0)">
+    <path id="glyph-G" transform="translate(-11.133 105)" d="M189.867 -100.000 L189.867 -86.667 L88.000 -86.667 Q75.067 -86.667 66.933 -85.000 Q58.800 -83.333 54.333 -79.933 Q49.867 -76.533 48.267 -71.200 Q46.667 -65.867 46.667 -58.667 L46.667 -41.333 Q46.667 -34.133 48.133 -28.800 Q49.600 -23.467 53.400 -20.000 Q57.200 -16.533 64.000 -14.867 Q70.800 -13.200 81.333 -13.200 L116.000 -13.200 Q125.733 -13.200 132.200 -13.933 Q138.667 -14.667 142.467 -16.400 Q146.267 -18.133 147.800 -21.067 Q149.333 -24.000 149.333 -28.267 L149.333 -42.800 L90.133 -42.800 L90.133 -56.133 L193.333 -56.133 L193.333 -30.667 Q193.333 -21.200 189.200 -15.200 Q185.067 -9.200 175.867 -5.800 Q166.667 -2.400 151.533 -1.133 Q136.400 0.133 114.667 0.133 L82.667 0.133 Q60.267 0.133 44.467 -2.400 Q28.667 -4.933 18.867 -10.200 Q9.067 -15.467 4.533 -23.800 Q0.000 -32.133 0.000 -43.600 L0.000 -56.267 Q0.000 -67.733 4.333 -76.067 Q8.667 -84.400 18.733 -89.667 Q28.800 -94.933 45.467 -97.467 Q62.133 -100.000 86.667 -100.000 Z"/>
+    <g transform="translate(284 -72.6) scale(0.84 0.69) translate(-256 0)"><path d="M168 112H344L256 271Z" stroke="currentColor" stroke-width="14" stroke-linejoin="round"/></g>
+    <path id="glyph-M" transform="translate(385.800 105)" d="M0.000 -0.000 L0.000 -80.400 Q0.000 -90.800 11.867 -96.267 Q23.733 -101.733 48.267 -101.733 Q68.800 -101.733 82.067 -97.467 Q95.333 -93.200 98.533 -83.867 L121.200 -18.133 Q121.733 -16.533 123.067 -15.400 Q124.400 -14.267 126.933 -14.267 Q129.600 -14.267 130.800 -15.533 Q132.000 -16.800 132.533 -18.400 L155.333 -83.733 Q158.667 -93.333 170.533 -97.533 Q182.400 -101.733 203.600 -101.733 Q226.400 -101.733 238.533 -96.333 Q250.667 -90.933 250.667 -80.400 L250.667 -0.000 L209.333 -0.000 L209.333 -80.000 Q209.333 -83.733 207.800 -85.400 Q206.267 -87.067 202.400 -87.067 Q198.667 -87.067 197.133 -85.533 Q195.600 -84.000 194.400 -80.667 L170.667 -16.533 Q167.467 -8.000 155.600 -3.133 Q143.733 1.733 125.333 1.733 Q107.200 1.733 95.733 -3.000 Q84.267 -7.733 81.200 -16.133 L57.200 -80.800 Q56.267 -83.333 54.600 -85.200 Q52.933 -87.067 49.067 -87.067 Q45.333 -87.067 43.333 -85.467 Q41.333 -83.867 41.333 -80.133 L41.333 -0.000 Z"/>
+    <path id="glyph-E" transform="translate(658.467 105)" d="M0.000 -0.000 L0.000 -100.000 L170.933 -100.000 L170.933 -86.667 L44.000 -86.667 L44.000 -57.467 L170.933 -57.467 L170.933 -44.133 L44.000 -44.133 L44.000 -13.333 L170.933 -13.333 L170.933 -0.000 Z"/>
+  </g>
+  <g id="point" transform="translate(0 0)">
+    <path id="glyph-P" transform="translate(29.400 223)" d="M114.133 -39.333 L44.000 -39.333 L44.000 -0.000 L0.000 -0.000 L0.000 -100.000 L113.867 -100.000 Q132.667 -100.000 145.000 -98.733 Q157.333 -97.467 164.533 -94.333 Q171.733 -91.200 174.667 -85.800 Q177.600 -80.400 177.600 -72.267 L177.600 -66.133 Q177.600 -59.200 174.667 -54.067 Q171.733 -48.933 164.600 -45.733 Q157.467 -42.533 145.133 -40.933 Q132.800 -39.333 114.133 -39.333 Z M44.000 -86.667 L44.000 -52.000 L115.333 -52.000 Q123.867 -52.000 127.733 -54.733 Q131.600 -57.467 131.600 -64.933 L131.600 -73.867 Q131.600 -81.067 127.733 -83.867 Q123.867 -86.667 115.333 -86.667 Z"/>
+    <g transform="translate(284 -74.86666666666665) scale(0.7333333333333333 0.7333333333333333) translate(-256 0)"><circle cx="256" cy="338" r="75"/></g>
+    <path id="glyph-I" transform="translate(361.000 223)" d="M0.000 -0.000 L0.000 -100.000 L44.000 -100.000 L44.000 -0.000 Z"/>
+    <path id="glyph-N" transform="translate(427.000 223)" d="M0.000 -0.000 L0.000 -80.000 Q0.000 -90.533 12.267 -96.133 Q24.533 -101.733 48.667 -101.733 Q68.267 -101.733 83.267 -98.067 Q98.267 -94.400 105.200 -83.600 L148.933 -15.867 Q150.133 -14.000 151.933 -12.800 Q153.733 -11.600 155.867 -11.600 Q159.467 -11.600 160.400 -13.267 Q161.333 -14.933 161.333 -18.667 L161.333 -100.000 L205.333 -100.000 L205.333 -19.067 Q205.333 -8.267 192.400 -3.267 Q179.467 1.733 154.133 1.733 Q135.867 1.733 122.400 -2.267 Q108.933 -6.267 102.800 -15.867 L58.933 -83.333 Q57.333 -85.733 55.200 -87.067 Q53.067 -88.400 50.400 -88.400 Q46.267 -88.400 45.133 -86.600 Q44.000 -84.800 44.000 -80.800 L44.000 -0.000 Z"/>
+    <path id="glyph-T" transform="translate(654.333 223)" d="M72.000 -0.000 L72.000 -86.667 L0.000 -86.667 L0.000 -100.000 L188.000 -100.000 L188.000 -86.667 L116.000 -86.667 L116.000 -0.000 Z"/>
+  </g>
+</g>
+</g></svg></div>
+  </header>
+  <main class="wrap">
+    <h1>羽毛球裁判计分器</h1>
+    <p class="lead">用局点记录单打和双打的每一分，随时查看发接发站位，赛后回看比分变化。</p>
+    <div class="features">
+      <section><h2>现场计分</h2><p>设置对阵和赛制，查看当前比分与发球方。</p></section>
+      <section><h2>双打站位</h2><p>根据比分和发球权确认当球的发球员、接发球员和站位。</p></section>
+      <section><h2>比赛记录</h2><p>局点可离线使用，比赛结束后可以逐球回看比分。</p></section>
+    </div>
+  </main>
+  <footer class="wrap">局点 · GamePoint</footer>
+</body>
+</html>
