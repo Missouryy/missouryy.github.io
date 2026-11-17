@@ -6,46 +6,12 @@
   <meta name="theme-color" content="#147526">
   <meta name="description" content="了解局点如何在设备上存储比赛数据，以及如何删除数据或联系开发者。">
   <title>隐私政策 | 局点 · GamePoint</title>
-  <style>
-* { box-sizing: border-box; }
-:root { color-scheme: light; --green: #147526; --ink: #18241b; --muted: #516055; --line: #d8e0d8; }
-body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
-a { color: var(--green); text-underline-offset: .25em; }
-a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-::selection { background: #d2eccf; color: var(--ink); }
-.wrap { width: min(100% - 40px, 960px); margin-inline: auto; }
-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-nav a { display: inline-flex; align-items: center; min-height: 44px; }
-.brand { text-decoration: none; font-weight: 700; color: var(--ink); }
-.hero { background: var(--green); }
-.hero svg { display: block; width: min(100%, 960px); height: auto; margin-inline: auto; }
-main { padding-block: clamp(32px, 6vw, 64px); }
-h1, h2 { line-height: 1.25; text-wrap: balance; }
-h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 5vw, 3.25rem); }
-h2 { margin: 0 0 8px; font-size: 1.2rem; }
-p { margin: 0; max-width: 42em; }
-.lead { color: var(--muted); font-size: 1.1rem; }
-.features, .faq { margin-top: 36px; }
-.features section, .faq details { border-top: 1px solid var(--line); padding-block: 15px; }
-.features section { display: grid; grid-template-columns: minmax(9em, 1fr) 3fr; gap: 16px; align-items: baseline; }
-.features h2 { margin: 0; }
-summary { cursor: pointer; font-weight: 600; min-height: 28px; }
-details p { padding-block: 8px 0; }
-.contact { display: inline-flex; align-items: center; margin-block: 18px 10px; min-height: 44px; padding: 8px 15px; border-radius: 6px; color: white; background: var(--green); font-weight: 650; }
-footer { padding-block: 20px 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
-@media (max-width: 560px) { .features section { grid-template-columns: 1fr; gap: 5px; } }
-</style>
+  <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/app-icon.png">
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="主导航">
-      <a class="brand" href="./">局点 · GamePoint</a>
-      <a href="./">产品介绍</a>
-    </nav>
-    
-  </header>
-  <main class="wrap">
+  <header class="header"><nav class="wrap nav" aria-label="主导航"><a class="brand" href="./" aria-label="局点 GamePoint 首页"><img class="app-icon" src="assets/app-icon.png" width="46" height="46" alt=""><span>局点 <b>GamePoint</b></span></a><div class="nav-links"><a href="./">产品介绍</a><a href="support.html">技术支持</a><a href="privacy.html" aria-current="page">隐私政策</a></div></nav></header>
+  <main class="wrap document">
     <h1>局点隐私政策</h1>
     <p class="lead">生效日期：2026 年 11 月 17 日</p>
     <div class="features">
@@ -56,7 +22,6 @@ footer { padding-block: 20px 30px; border-top: 1px solid var(--line); color: var
       <section><h2>联系我们</h2><p>如对隐私政策有疑问，或希望提出数据删除请求，请发邮件至 <a href="mailto:missouryy@icloud.com">missouryy@icloud.com</a>。</p></section>
     </div>
   </main>
-  <footer class="wrap"><a href="./support.html">技术支持</a></footer>
+  <footer class="wrap footer"><a class="brand footer-brand" href="./">局点 <b>GamePoint</b></a><span class="copyright">© 2026 Yu Yan</span></footer>
 </body>
 </html>
-

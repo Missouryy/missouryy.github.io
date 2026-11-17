@@ -6,56 +6,21 @@
   <meta name="theme-color" content="#147526">
   <meta name="description" content="联系局点技术支持，并查看羽毛球比赛计分常见问题。">
   <title>技术支持 | 局点 · GamePoint</title>
-  <style>
-* { box-sizing: border-box; }
-:root { color-scheme: light; --green: #147526; --ink: #18241b; --muted: #516055; --line: #d8e0d8; }
-body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
-a { color: var(--green); text-underline-offset: .25em; }
-a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-::selection { background: #d2eccf; color: var(--ink); }
-.wrap { width: min(100% - 40px, 960px); margin-inline: auto; }
-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-nav a { display: inline-flex; align-items: center; min-height: 44px; }
-.brand { text-decoration: none; font-weight: 700; color: var(--ink); }
-.hero { background: var(--green); }
-.hero svg { display: block; width: min(100%, 960px); height: auto; margin-inline: auto; }
-main { padding-block: clamp(32px, 6vw, 64px); }
-h1, h2 { line-height: 1.25; text-wrap: balance; }
-h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 5vw, 3.25rem); }
-h2 { margin: 0 0 8px; font-size: 1.2rem; }
-p { margin: 0; max-width: 42em; }
-.lead { color: var(--muted); font-size: 1.1rem; }
-.features, .faq { margin-top: 36px; }
-.features section, .faq details { border-top: 1px solid var(--line); padding-block: 15px; }
-.features section { display: grid; grid-template-columns: minmax(9em, 1fr) 3fr; gap: 16px; align-items: baseline; }
-.features h2 { margin: 0; }
-summary { cursor: pointer; font-weight: 600; min-height: 28px; }
-details p { padding-block: 8px 0; }
-.contact { display: inline-flex; align-items: center; margin-block: 18px 10px; min-height: 44px; padding: 8px 15px; border-radius: 6px; color: white; background: var(--green); font-weight: 650; }
-footer { padding-block: 20px 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
-@media (max-width: 560px) { .features section { grid-template-columns: 1fr; gap: 5px; } }
-</style>
+  <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/app-icon.png">
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="主导航">
-      <a class="brand" href="./">局点 · GamePoint</a>
-      <a href="./">产品介绍</a>
-    </nav>
-    
-  </header>
-  <main class="wrap">
+  <header class="header"><nav class="wrap nav" aria-label="主导航"><a class="brand" href="./" aria-label="局点 GamePoint 首页"><img class="app-icon" src="assets/app-icon.png" width="46" height="46" alt=""><span>局点 <b>GamePoint</b></span></a><div class="nav-links"><a href="./">产品介绍</a><a href="support.html" aria-current="page">技术支持</a><a href="privacy.html">隐私政策</a></div></nav></header>
+  <main class="wrap document">
     <h1>技术支持</h1>
     <p class="lead">遇到比分、发接发站位或比赛记录问题，欢迎联系局点技术支持。</p>
-    <a class="contact" href="mailto:missouryy@icloud.com?subject=GamePoint%20Support">发送支持邮件</a>
-    <p><a href="mailto:missouryy@icloud.com">missouryy@icloud.com</a></p>
+    <div class="support-contact"><a class="email-address" href="mailto:missouryy@icloud.com">missouryy@icloud.com</a><a class="email-action" href="mailto:missouryy@icloud.com?subject=GamePoint%20Support"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>发送支持邮件</a></div>
     <div class="faq">
       <h2>常见问题</h2>
       <details><summary>可以离线计分吗？</summary><p>可以。局点支持离线记录比赛。</p></details>
       <details><summary>比分或站位有误，反馈时需要提供什么？</summary><p>请附上 App 版本、设备与系统版本、比赛类型、当时的比分及操作步骤。若方便，也可以附上截图。</p></details>
     </div>
   </main>
-  <footer class="wrap">局点 · GamePoint</footer>
+  <footer class="wrap footer"><a class="brand footer-brand" href="./">局点 <b>GamePoint</b></a><span class="copyright">© 2026 Yu Yan</span></footer>
 </body>
 </html>

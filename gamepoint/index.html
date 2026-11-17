@@ -1,74 +1,24 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#147526">
-  <meta name="description" content="为羽毛球裁判与球友设计的单打、双打计分工具。">
-  <title>局点 · GamePoint | 羽毛球裁判计分器</title>
-  <style>
-* { box-sizing: border-box; }
-:root { color-scheme: light; --green: #147526; --ink: #18241b; --muted: #516055; --line: #d8e0d8; }
-body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
-a { color: var(--green); text-underline-offset: .25em; }
-a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
-::selection { background: #d2eccf; color: var(--ink); }
-.wrap { width: min(100% - 40px, 960px); margin-inline: auto; }
-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-nav a { display: inline-flex; align-items: center; min-height: 44px; }
-.brand { text-decoration: none; font-weight: 700; color: var(--ink); }
-.hero { background: var(--green); }
-.hero svg { display: block; width: min(100%, 960px); height: auto; margin-inline: auto; }
-main { padding-block: clamp(32px, 6vw, 64px); }
-h1, h2 { line-height: 1.25; text-wrap: balance; }
-h1 { margin: 0 0 14px; font-size: clamp(1.9rem, 5vw, 3.25rem); }
-h2 { margin: 0 0 8px; font-size: 1.2rem; }
-p { margin: 0; max-width: 42em; }
-.lead { color: var(--muted); font-size: 1.1rem; }
-.features, .faq { margin-top: 36px; }
-.features section, .faq details { border-top: 1px solid var(--line); padding-block: 15px; }
-.features section { display: grid; grid-template-columns: minmax(9em, 1fr) 3fr; gap: 16px; align-items: baseline; }
-.features h2 { margin: 0; }
-summary { cursor: pointer; font-weight: 600; min-height: 28px; }
-details p { padding-block: 8px 0; }
-.contact { display: inline-flex; align-items: center; margin-block: 18px 10px; min-height: 44px; padding: 8px 15px; border-radius: 6px; color: white; background: var(--green); font-weight: 650; }
-footer { padding-block: 20px 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .875rem; }
-@media (max-width: 560px) { .features section { grid-template-columns: 1fr; gap: 5px; } }
-</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#147526">
+<meta name="description" content="局点 GamePoint，为羽毛球裁判与球友设计。记录单打、双打的每一分，确认发接发站位，赛后回看比赛。">
+<meta property="og:title" content="局点 GamePoint — 羽毛球裁判计分器"><meta property="og:description" content="羽毛球裁判计分与对局记录。"><meta property="og:image" content="https://missouryy.github.io/gamepoint/assets/court-poster.png">
+<title>局点 GamePoint｜羽毛球裁判计分器</title>
+<link rel="stylesheet" href="styles.css"><script src="script.js" defer></script>
+<link rel="icon" href="assets/app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/app-icon.png">
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="主导航">
-      <a class="brand" href="./">局点 · GamePoint</a>
-      <a href="./support.html">技术支持</a>
-    </nav>
-    <div class="hero"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="3840" height="1646" viewBox="0 0 3840 1646"><rect width="3840" height="1646" fill="#147526"/><g transform="translate(1920 823) scale(2.6) translate(-415.6 -113)"><g fill="currentColor" color="#FFFFFF">
-  <g id="game" transform="translate(0 0)">
-    <path id="glyph-G" transform="translate(-11.133 105)" d="M189.867 -100.000 L189.867 -86.667 L88.000 -86.667 Q75.067 -86.667 66.933 -85.000 Q58.800 -83.333 54.333 -79.933 Q49.867 -76.533 48.267 -71.200 Q46.667 -65.867 46.667 -58.667 L46.667 -41.333 Q46.667 -34.133 48.133 -28.800 Q49.600 -23.467 53.400 -20.000 Q57.200 -16.533 64.000 -14.867 Q70.800 -13.200 81.333 -13.200 L116.000 -13.200 Q125.733 -13.200 132.200 -13.933 Q138.667 -14.667 142.467 -16.400 Q146.267 -18.133 147.800 -21.067 Q149.333 -24.000 149.333 -28.267 L149.333 -42.800 L90.133 -42.800 L90.133 -56.133 L193.333 -56.133 L193.333 -30.667 Q193.333 -21.200 189.200 -15.200 Q185.067 -9.200 175.867 -5.800 Q166.667 -2.400 151.533 -1.133 Q136.400 0.133 114.667 0.133 L82.667 0.133 Q60.267 0.133 44.467 -2.400 Q28.667 -4.933 18.867 -10.200 Q9.067 -15.467 4.533 -23.800 Q0.000 -32.133 0.000 -43.600 L0.000 -56.267 Q0.000 -67.733 4.333 -76.067 Q8.667 -84.400 18.733 -89.667 Q28.800 -94.933 45.467 -97.467 Q62.133 -100.000 86.667 -100.000 Z"/>
-    <g transform="translate(284 -72.6) scale(0.84 0.69) translate(-256 0)"><path d="M168 112H344L256 271Z" stroke="currentColor" stroke-width="14" stroke-linejoin="round"/></g>
-    <path id="glyph-M" transform="translate(385.800 105)" d="M0.000 -0.000 L0.000 -80.400 Q0.000 -90.800 11.867 -96.267 Q23.733 -101.733 48.267 -101.733 Q68.800 -101.733 82.067 -97.467 Q95.333 -93.200 98.533 -83.867 L121.200 -18.133 Q121.733 -16.533 123.067 -15.400 Q124.400 -14.267 126.933 -14.267 Q129.600 -14.267 130.800 -15.533 Q132.000 -16.800 132.533 -18.400 L155.333 -83.733 Q158.667 -93.333 170.533 -97.533 Q182.400 -101.733 203.600 -101.733 Q226.400 -101.733 238.533 -96.333 Q250.667 -90.933 250.667 -80.400 L250.667 -0.000 L209.333 -0.000 L209.333 -80.000 Q209.333 -83.733 207.800 -85.400 Q206.267 -87.067 202.400 -87.067 Q198.667 -87.067 197.133 -85.533 Q195.600 -84.000 194.400 -80.667 L170.667 -16.533 Q167.467 -8.000 155.600 -3.133 Q143.733 1.733 125.333 1.733 Q107.200 1.733 95.733 -3.000 Q84.267 -7.733 81.200 -16.133 L57.200 -80.800 Q56.267 -83.333 54.600 -85.200 Q52.933 -87.067 49.067 -87.067 Q45.333 -87.067 43.333 -85.467 Q41.333 -83.867 41.333 -80.133 L41.333 -0.000 Z"/>
-    <path id="glyph-E" transform="translate(658.467 105)" d="M0.000 -0.000 L0.000 -100.000 L170.933 -100.000 L170.933 -86.667 L44.000 -86.667 L44.000 -57.467 L170.933 -57.467 L170.933 -44.133 L44.000 -44.133 L44.000 -13.333 L170.933 -13.333 L170.933 -0.000 Z"/>
-  </g>
-  <g id="point" transform="translate(0 0)">
-    <path id="glyph-P" transform="translate(29.400 223)" d="M114.133 -39.333 L44.000 -39.333 L44.000 -0.000 L0.000 -0.000 L0.000 -100.000 L113.867 -100.000 Q132.667 -100.000 145.000 -98.733 Q157.333 -97.467 164.533 -94.333 Q171.733 -91.200 174.667 -85.800 Q177.600 -80.400 177.600 -72.267 L177.600 -66.133 Q177.600 -59.200 174.667 -54.067 Q171.733 -48.933 164.600 -45.733 Q157.467 -42.533 145.133 -40.933 Q132.800 -39.333 114.133 -39.333 Z M44.000 -86.667 L44.000 -52.000 L115.333 -52.000 Q123.867 -52.000 127.733 -54.733 Q131.600 -57.467 131.600 -64.933 L131.600 -73.867 Q131.600 -81.067 127.733 -83.867 Q123.867 -86.667 115.333 -86.667 Z"/>
-    <g transform="translate(284 -74.86666666666665) scale(0.7333333333333333 0.7333333333333333) translate(-256 0)"><circle cx="256" cy="338" r="75"/></g>
-    <path id="glyph-I" transform="translate(361.000 223)" d="M0.000 -0.000 L0.000 -100.000 L44.000 -100.000 L44.000 -0.000 Z"/>
-    <path id="glyph-N" transform="translate(427.000 223)" d="M0.000 -0.000 L0.000 -80.000 Q0.000 -90.533 12.267 -96.133 Q24.533 -101.733 48.667 -101.733 Q68.267 -101.733 83.267 -98.067 Q98.267 -94.400 105.200 -83.600 L148.933 -15.867 Q150.133 -14.000 151.933 -12.800 Q153.733 -11.600 155.867 -11.600 Q159.467 -11.600 160.400 -13.267 Q161.333 -14.933 161.333 -18.667 L161.333 -100.000 L205.333 -100.000 L205.333 -19.067 Q205.333 -8.267 192.400 -3.267 Q179.467 1.733 154.133 1.733 Q135.867 1.733 122.400 -2.267 Q108.933 -6.267 102.800 -15.867 L58.933 -83.333 Q57.333 -85.733 55.200 -87.067 Q53.067 -88.400 50.400 -88.400 Q46.267 -88.400 45.133 -86.600 Q44.000 -84.800 44.000 -80.800 L44.000 -0.000 Z"/>
-    <path id="glyph-T" transform="translate(654.333 223)" d="M72.000 -0.000 L72.000 -86.667 L0.000 -86.667 L0.000 -100.000 L188.000 -100.000 L188.000 -86.667 L116.000 -86.667 L116.000 -0.000 Z"/>
-  </g>
-</g>
-</g></svg></div>
-  </header>
-  <main class="wrap">
-    <h1>羽毛球裁判计分器</h1>
-    <p class="lead">用局点记录单打和双打的每一分，随时查看发接发站位，赛后回看比分变化。</p>
-    <div class="features">
-      <section><h2>现场计分</h2><p>设置对阵和赛制，查看当前比分与发球方。</p></section>
-      <section><h2>双打站位</h2><p>根据比分和发球权确认当球的发球员、接发球员和站位。</p></section>
-      <section><h2>比赛记录</h2><p>局点可离线使用，比赛结束后可以逐球回看比分。</p></section>
-    </div>
-  </main>
-  <footer class="wrap">局点 · GamePoint <span aria-hidden="true"> · </span><a href="./privacy.html">隐私政策</a></footer>
-</body>
-</html>
+<a class="skip" href="#main">跳到正文</a>
+<header class="header"><nav class="wrap nav" aria-label="主导航"><a class="brand" href="./" aria-label="局点 GamePoint 首页"><img class="app-icon" src="assets/app-icon.png" width="46" height="46" alt=""><span>局点 <b>GamePoint</b></span></a><div class="nav-links"><a href="./" aria-current="page">产品介绍</a><a href="support.html">技术支持</a><a href="privacy.html">隐私政策</a></div></nav></header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-title"><div class="hero-copy"><h1 id="hero-title">局点，<br>羽毛球裁判<br>计分器。</h1><p class="hero-description">从第一声发球，到最后一个局点。<br>把比分、发接发和比赛记录交给局点，<br>把注意力留在球场。</p><a class="button" href="#experience">体验计分</a></div><div class="demo" id="experience" aria-label="计分体验"><div class="scoreboard"><div class="match-title">友谊赛</div><div class="board-heading"><span>1 号场</span><time id="match-time" aria-label="比赛用时">00:00</time></div><div class="match-teams"><span>梁伟铿<br>王昶</span><span class="games" id="games-a">0</span><span class="games" id="games-b">0</span><span>金元浩<br>徐承宰</span></div><div class="score-grid"><button class="score-button" id="team-a" aria-label="给梁伟铿和王昶加一分"><strong id="score-a">0</strong><span class="serve-label" id="serve-a">发球</span></button><button class="score-button" id="team-b" aria-label="给金元浩和徐承宰加一分"><strong id="score-b">0</strong><span class="serve-label" id="serve-b"></span></button></div><div class="score-call"><button id="start-match" class="start-match" aria-label="开始比赛并计时，零比零">0 比 0</button><p class="score-status" id="score-status" role="status" aria-live="polite" hidden></p></div><div class="board-tools"><button id="undo" disabled>撤销上一球</button><button id="reset">重新体验</button></div><noscript><p>启用 JavaScript 后可体验加分与撤销。</p></noscript></div></div></section>
+<div class="feature-ribbon" tabindex="0" aria-label="单打、双打，发接发站位，离线计分，逐球回看"><div class="ribbon-track" aria-hidden="true"><div class="ribbon-group"><span>单打 / 双打</span><span>发接发站位</span><span>离线计分</span><span>逐球回看</span></div><div class="ribbon-group"><span>单打 / 双打</span><span>发接发站位</span><span>离线计分</span><span>逐球回看</span></div></div></div>
+
+<section class="position-section"><div class="wrap position-layout"><figure class="position-figure"><svg class="reference-court" viewBox="0 0 600 356" role="img" aria-labelledby="court-title"><title id="court-title">双打开局站位示意：伟铿发球，元浩接发，王昶与承宰为搭档</title><rect width="600" height="356" rx="18" fill="#147526"/><g fill="none" stroke="white" stroke-width="3"><path d="M26 26H574V330H26Z M55 26V330 M545 26V330 M26 49H574 M26 307H574 M210 26V330 M390 26V330 M300 26V330 M26 178H210 M390 178H574"/></g><g fill="white"><circle cx="134" cy="114" r="42"/><circle cx="134" cy="244" r="42"/><circle cx="466" cy="114" r="42"/><circle cx="466" cy="244" r="42"/></g><g fill="#000" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="25" text-anchor="middle" dominant-baseline="central"><text x="134" y="114">王昶</text><text x="134" y="244">伟铿</text><text x="466" y="114">元浩</text><text x="466" y="244">承宰</text></g><g fill="#147526" stroke="white" stroke-width="2"><circle cx="165" cy="211" r="20"/><circle cx="497" cy="81" r="20"/></g><g fill="white" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="22" text-anchor="middle" dominant-baseline="central"><text x="165" y="211">发</text><text x="497" y="81">接</text></g></svg></figure><div class="section-copy"><h2>谁发球，谁接发。<br>一眼有数。</h2><p>双打不只是两组比分。结合比分与发球权，确认这一球的发球员、接发球员和发球区，减少场上的反复确认。</p><a class="button secondary-button" href="support.html">了解使用与反馈</a></div></div></section>
+<section class="records wrap section"><h2>比赛会结束，<br>每一分都留下。</h2><div class="record-copy"><p class="record-intro">从现场计分到赛后回看，<br>把一场球连起来。</p><p class="record-detail">局点可以离线记录比赛，让你在结束后<br class="desktop-break">重新查看比分变化。</p><div class="privacy-note"><h3>记录留在你的设备上。</h3><p>无需注册账号，比赛数据不上传至开发者服务器。<br class="desktop-break">你的对局，由你保管。</p><a class="button secondary-button" href="privacy.html">查看隐私政策</a></div></div></section>
+<section class="questions wrap section" aria-labelledby="questions-title"><h2 id="questions-title">上场前，<br>你可能想知道。</h2><div class="faq"><details><summary>单打和双打都可以使用吗？</summary><p>可以。局点围绕单打与双打的现场计分设计，双打还可查看发球员、接发球员和站位。</p></details><details><summary>球馆没有网络，可以计分吗？</summary><p>可以。局点支持离线记录比赛，比赛信息保存在设备上。</p></details><details><summary>这里的演示就是 App 吗？</summary><p>不是。这是官网上的简化计分示意，只展示加分、撤销和单局结束。它不会保存比赛，也不代表 App 的完整界面与规则能力。</p></details><details><summary>遇到问题，怎样联系开发者？</summary><p>请前往<a href="support.html">技术支持</a>，附上 App 版本、设备与系统版本，以及问题发生时的比分和操作步骤。</p></details></div></section>
+<section class="closing"><div class="wrap closing-inner"><div><h2>下一场，认真记。</h2><p>关于局点的使用问题或建议，我们愿意听。</p></div><a class="button button-light" href="support.html">联系技术支持</a></div></section>
+</main><footer class="wrap footer"><a class="brand footer-brand" href="./">局点 <b>GamePoint</b></a><span class="copyright">© 2026 Yu Yan</span></footer>
+</body></html>
