@@ -16,7 +16,10 @@
   let runningSince = null;
   let ticker = null;
   const won = (x, y) => (x >= 21 && x - y >= 2) || x >= 30;
-  const finished = () => won(...state.scores) || won(...[...state.scores].reverse());
+  function finished() {
+    const [x, y] = state.scores;
+    return won(x, y) || won(y, x);
+  }
   function updateClock() {
     const ms = elapsed + (runningSince === null ? 0 : performance.now() - runningSince);
     const seconds = Math.floor(ms / 1000);
@@ -72,7 +75,10 @@
     buttons.forEach(button => { button.disabled = end; });
     undo.disabled = history.length === 0;
   }
-  start.addEventListener('click', begin);
+  start.addEventListener('click', () => {
+    begin();
+    buttons[state.server].focus({ preventScroll: true });
+  });
   buttons.forEach((button, index) => button.addEventListener('click', () => {
     if (finished()) return;
     begin();
