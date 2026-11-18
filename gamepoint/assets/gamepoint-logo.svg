@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="164 -4.35 240 240" role="img" aria-labelledby="title">
+  <title id="title">GAME POINT 启动页图标（白色）</title>
+  <g fill="#FFF">
+    <g transform="translate(284 -72.6) scale(0.84 0.69) translate(-256 0)">
+      <path d="M168 112H344L256 271Z" stroke="#FFF" stroke-width="14" stroke-linejoin="round"/>
+    </g>
+    <g transform="translate(284 -74.86666666666665) scale(0.7333333333333333 0.7333333333333333) translate(-256 0)">
+      <circle cx="256" cy="338" r="75"/>
+    </g>
+  </g>
+</svg>
